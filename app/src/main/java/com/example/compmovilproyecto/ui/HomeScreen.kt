@@ -27,3 +27,20 @@ fun TextoGeneralPreview() {
     TextoGeneral(
         mensaje = "Hola")
 }
+@Composable
+fun BotonGeneral(
+    texto: String,
+    modifier: Modifier = Modifier
+) {
+    Button(onClick = { /*TODO*/ },
+        modifier = modifier
+    ) {
+        Text(text = texto)
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun BotonGeneralPreview(){
+    BotonGeneral("Iniciar Sesión")
+}
