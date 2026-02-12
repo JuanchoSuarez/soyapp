@@ -12,7 +12,8 @@
     <color name="azulReal">#002cb1</color>
     <color name="azulMedio">#005cc1</color>
     <color name="azulClaro">#008bf2</color>
-    <color name="violetaClaro">#9e55fa</color>
+    <color name="violetaApagado">#7b5e96</color>
+    <color name="violetaClaro">#a461c1</color>
     <color name="purpura">#af34dd</color>
     <color name="morado">#8e19b8</color>
     <color name="magentaOscuro">#81005c</color>

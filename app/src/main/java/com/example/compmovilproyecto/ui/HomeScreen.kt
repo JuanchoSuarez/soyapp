@@ -1,15 +1,26 @@
 package com.example.compmovilproyecto.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -42,12 +53,21 @@ fun TextoGeneralPreview() {
 @Composable
 fun BotonGeneral(
     texto: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier.fillMaxWidth(0.8f)
+        .height(70.dp)
+        .padding(vertical = 8.dp),
+    color: Int = R.color.violetaClaro,
+    forma: Shape = RoundedCornerShape(8.dp)
 ) {
     Button(onClick = { /*TODO*/ },
-        modifier = modifier
+        modifier = modifier,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = colorResource(color),
+        ),
+        shape = forma
     ) {
-        Text(text = texto)
+        Text(text = texto,
+            fontSize = 20.sp)
     }
 }
 
@@ -61,12 +81,14 @@ fun BotonGeneralPreview(){
 fun ImagenGeneral(
     idImagen: Int, // (R.drawable.nombreImagen)
     descripcion: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier.size(250.dp),
+    escala: ContentScale = ContentScale.Fit
 ) {
     Image(
         painter = painterResource(id = idImagen),
         contentDescription = descripcion,
-        modifier = modifier
+        modifier = modifier,
+        contentScale = escala
     )
 }
 
@@ -81,25 +103,61 @@ fun ImagenGeneralPreview() {
 
 @Composable
 fun BodyHomeScreen(){
-    Column{
-        TextoGeneral("SOY",
-            estilo = TextStyle(fontSize = 50.sp,
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        TextoGeneral(
+            stringResource(R.string.soy),
+            estilo = TextStyle(fontSize = 90.sp,
                 fontFamily = FontFamily.Cursive),
-            modifier = Modifier)
+            modifier = Modifier.padding(top = 100.dp, bottom = 10.dp))
         ImagenGeneral(
             idImagen = R.drawable.iconosoy,
-            descripcion = "Logo CompMovil"
+            descripcion = stringResource(R.string.logo_soy)
         )
-        TextoGeneral("\"Live a life you will remember\"",
-            estilo = TextStyle(fontSize = 15.sp,
-                fontStyle = FontStyle.Italic)
+        TextoGeneral(
+            stringResource(R.string.live_a_life_you_will_remember),
+            estilo = TextStyle(fontSize = 22.sp,
+                fontStyle = FontStyle.Italic),
+            modifier = Modifier.padding(top = 15.dp, bottom = 10.dp)
             )
-        TextoGeneral("- Avicii, The Nights",
-            estilo = TextStyle(fontSize = 10.sp)
+        TextoGeneral(
+            stringResource(R.string.avicii_the_nights),
+            estilo = TextStyle(fontSize = 16.sp,),
+            color = colorResource(R.color.violetaClaro),
+            modifier = Modifier.padding(top = 5.dp, bottom = 55.dp)
         )
-        BotonGeneral("Sing Up")
-        BotonGeneral("Log in")
+        BotonGeneral(stringResource(R.string.sing_up))
+        BotonGeneral(stringResource(R.string.log_in),
+            color = R.color.violetaApagado
+        )
     }
+}
+
+@Composable
+fun HomeScreen(){
+    Box(){
+        ImagenGeneral(
+            idImagen = R.drawable.fondopantallaprincipal,
+            descripcion = stringResource(R.string.fondo_pantalla_principal),
+            modifier = Modifier.fillMaxSize(),
+            escala = ContentScale.Crop
+        )
+        Column(
+
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize()
+        ){
+            BodyHomeScreen()
+        }
+
+    }
+}
+
+@Composable
+@Preview()
+fun HomeScreenPreview(){
+    HomeScreen()
 }
 
 @Composable
