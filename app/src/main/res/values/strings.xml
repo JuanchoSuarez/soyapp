@@ -21,6 +21,16 @@
     <string name="correo">\n\n</string>
     <string name="repetir_contrasena">Repetir CONTRASENA</string>
     <string name="email">Email</string>
+    <string name="esta_canci_n_es_un_himno_del_electropop_moderno">Esta canción es un himno del electropop moderno...</string>
+    <string name="musiclover">musiclover</string>
+    <string name="midnight_city">Midnight City</string>
+    <string name="m83">M83</string>
+    <string name="sarah_music">sarah_music</string>
+    <string name="the_mother_we_share">The Mother We Share</string>
+    <string name="chvrches">CHVRCHES</string>
+    <string name="incre_ble_esta_canci_n_nunca_pasa_de_moda">¡Increíble! Esta canción nunca pasa de moda...</string>
+    <string name="rese_as_recomendadas_para_ti">Reseñas recomendadas para ti</string>
+    <string name="fondo_for_you">Fondo For You</string>
 
 
 </resources>

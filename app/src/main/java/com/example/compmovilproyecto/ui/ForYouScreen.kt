@@ -17,13 +17,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-
-
 
 data class Review(
     val user: String,
@@ -134,17 +133,17 @@ fun ReviewsList() {
 
     val reviews = listOf(
         Review(
-            "musiclover",
-            "Midnight City",
-            "M83",
-            "Esta canción es un himno del electropop moderno...",
+            stringResource(R.string.musiclover),
+            stringResource(R.string.midnight_city),
+            stringResource(R.string.m83),
+            stringResource(R.string.esta_canci_n_es_un_himno_del_electropop_moderno),
             5
         ),
         Review(
-            "sarah_music",
-            "The Mother We Share",
-            "CHVRCHES",
-            "¡Increíble! Esta canción nunca pasa de moda...",
+            stringResource(R.string.sarah_music),
+            stringResource(R.string.the_mother_we_share),
+            stringResource(R.string.chvrches),
+            stringResource(R.string.incre_ble_esta_canci_n_nunca_pasa_de_moda),
             5
         )
     )
@@ -157,7 +156,7 @@ fun ReviewsList() {
 
         item {
             Text(
-                text = "Reseñas recomendadas para ti",
+                text = stringResource(R.string.rese_as_recomendadas_para_ti),
                 color = Color.White,
                 fontSize = 14.sp,
                 modifier = Modifier.padding(vertical = 8.dp)
@@ -194,7 +193,7 @@ fun ForYouScreen() {
 
         ImagenGeneral(
             idImagen = R.drawable.fondodeforyouscreen,
-            descripcion = "Fondo For You",
+            descripcion = stringResource(R.string.fondo_for_you),
             modifier = Modifier.fillMaxSize(),
             escala = ContentScale.Crop
         )
