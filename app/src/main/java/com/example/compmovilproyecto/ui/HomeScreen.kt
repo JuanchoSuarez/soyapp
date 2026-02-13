@@ -127,7 +127,7 @@ fun BodyHomeScreen(){
             color = colorResource(R.color.violetaClaro),
             modifier = Modifier.padding(top = 5.dp, bottom = 55.dp)
         )
-        BotonGeneral(stringResource(R.string.sing_up))
+        BotonGeneral(stringResource(R.string.sign_up))
         BotonGeneral(stringResource(R.string.log_in),
             color = R.color.violetaApagado
         )
