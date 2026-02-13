@@ -13,5 +13,8 @@
     <string name="tab_novedades">Novedades</string>
     <string name="recommended_reviews">Reseñas recomendadas para ti</string>
     <string name="fondo_foryou">Fondo pantalla For You</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">contrasena</string>
 
 </resources>

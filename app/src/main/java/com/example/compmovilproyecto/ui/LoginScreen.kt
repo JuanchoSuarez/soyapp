@@ -13,13 +13,17 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -51,7 +55,8 @@ fun TextoInicialPreview() {
 @Composable
 fun AppButton(
     textoBoton: String,
-    modifier: Modifier = Modifier.fillMaxWidth(0.8f)
+    modifier: Modifier = Modifier
+        .fillMaxWidth(0.8f)
         .height(70.dp)
         .padding(vertical = 8.dp),
     color: Int = R.color.violetaClaro,
@@ -72,7 +77,7 @@ fun AppButton(
 @Composable
 @Preview
 fun AppButtonPreview(){
-    AppButton("Ingresar")
+    AppButton(stringResource(R.string.ingresar))
 }
 
 @Composable
@@ -94,19 +99,39 @@ fun LogoApp(
 fun LogoAppPreview() {
     LogoApp(
         idImagen = R.drawable.iconosoy,
-        descripcion = "Logo CompMovil"
+        descripcion = "Logo Soy"
     )
 }
 
 @Composable
 fun BodyLoginScreen(){
-    Row(){
-        LogoApp()
-        TextoInicial("SOY")
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        TextoInicial(
+            stringResource(R.string.soy),
+            estilo = TextStyle(fontSize = 90.sp,
+                fontFamily = FontFamily.Cursive),
+            modifier = Modifier.padding(top = 100.dp, bottom = 10.dp))
+        LogoApp(
+            idImagen = R.drawable.iconosoy,
+            descripcion = stringResource(R.string.logo_soy)
+        )
+        TextoInicial(
+            stringResource((R.string.usuario)),
+            estilo = TextStyle(fontSize = 22.sp,
+                fontStyle = FontStyle.Italic),
+            modifier = Modifier.padding(top = 15.dp, bottom = 10.dp)
+        )
+        TextoInicial(
+            stringResource((R.string.contrasena)),
+            estilo = TextStyle(fontSize = 16.sp,),
+            color = colorResource(R.color.violetaClaro),
+            modifier = Modifier.padding(top = 5.dp, bottom = 55.dp)
+        )
+        BotonGeneral(stringResource(R.string.ingresar),
+            color = R.color.violetaApagado
+        )
     }
-    Column() {
-        AppButton("Ingresar")
-
-    }
-
 }
+
