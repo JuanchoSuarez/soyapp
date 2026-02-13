@@ -72,7 +72,7 @@ fun BotonGeneral(
 }
 
 @Composable
-@Preview()
+@Preview
 fun BotonGeneralPreview(){
     BotonGeneral("Iniciar Sesión")
 }
@@ -93,7 +93,7 @@ fun ImagenGeneral(
 }
 
 @Composable
-@Preview()
+@Preview
 fun ImagenGeneralPreview() {
     ImagenGeneral(
         idImagen = R.drawable.iconosoy,
@@ -136,7 +136,7 @@ fun BodyHomeScreen(){
 
 @Composable
 fun HomeScreen(){
-    Box(){
+    Box{
         ImagenGeneral(
             idImagen = R.drawable.fondopantallaprincipal,
             descripcion = stringResource(R.string.fondo_pantalla_principal),
@@ -155,14 +155,13 @@ fun HomeScreen(){
 }
 
 @Composable
-@Preview()
+@Preview
 fun HomeScreenPreview(){
     HomeScreen()
 }
 
 @Composable
-@Preview()
+@Preview
 fun BodyHomeScreenPreview(){
     BodyHomeScreen()
 }
-
