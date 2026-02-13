@@ -192,7 +192,7 @@ fun FormularioRegistroUsuario(
         TextField(
             value = "",
             onValueChange = { /*TODO*/ },
-            label = {Text(text = "USUARIO")},
+            label = {Text(text = stringResource(R.string.usuario)},
         )
 
 }
@@ -205,7 +205,7 @@ fun FormularioRegistroContraseña(
     OutlinedTextField(
         value = "",
         onValueChange = { /*TODO*/ },
-        label = {Text(text = "CONTRASEÑA")},
+        label = {Text(text = stringResource(R.string.contrasena))},
     )
 }
 @Preview()

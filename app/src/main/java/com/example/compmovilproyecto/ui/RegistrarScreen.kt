@@ -121,9 +121,16 @@ fun BodyRegistrarScreen(){
             idImagen = R.drawable.iconosoy,
             descripcion = stringResource(R.string.logo_soy)
         )
-
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
         FormularioRegistro()
-
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
         AppButton(stringResource(R.string.crear_cuenta),
             color = R.color.violetaApagado
         )
