@@ -132,9 +132,6 @@ fun BodyLoginScreen(){
                 fontStyle = FontStyle.Italic),
             modifier = Modifier.padding(top = 15.dp, bottom = 10.dp)
         )
-        Spacer(
-            modifier = Modifier.height(50.dp)
-        )
         FormularioRegistroUsuario()
         Spacer(
             modifier = Modifier.height(16.dp)
@@ -145,9 +142,6 @@ fun BodyLoginScreen(){
             estilo = TextStyle(fontSize = 22.sp,
                 fontStyle = FontStyle.Italic),
             modifier = Modifier.padding(top = 15.dp, bottom = 10.dp)
-        )
-        Spacer(
-            modifier = Modifier.height(80.dp)
         )
         FormularioRegistroContraseña()
         Spacer(
