@@ -20,5 +20,7 @@
     <string name="nombre">Nombre</string>
     <string name="correo">\n\n</string>
     <string name="repetir_contrasena">Repetir CONTRASENA</string>
+    <string name="email">Email</string>
+
 
 </resources>
