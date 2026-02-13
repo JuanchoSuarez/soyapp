@@ -4,71 +4,107 @@ import android.R.color.black
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 
 @Composable
-fun Mensaje(
-    frase: String
-){
+fun TextoInicial(
+    mensaje: String,
+    color: Color = Color.White,
+    estilo: TextStyle = TextStyle.Default,
+    modifier: Modifier = Modifier
+) {
     Text(
-        "${frase}",
-        fontSize = 20.sp
-    )
-}
-@Composable
-@Preview(showBackground = true)
-fun MensajePreview(){
-    Mensaje("SOY")
-}
-
-
-@Composable
-fun LogoApp(){
-    Image(
-        painter = painterResource(R.drawable.iconosoy),
-        contentDescription = "Logo de la app",
-        modifier = Modifier.size(48.dp)
+        text = mensaje,
+        color = color,
+        style = estilo,
+        modifier = modifier
     )
 }
 
 @Composable
-@Preview(showBackground = true, backgroundColor =black)
-fun LogoAppPreview(){
-    LogoApp()
+@Preview
+fun TextoInicialPreview() {
+    TextoInicial(
+        mensaje = "Hola")
 }
+
+
 @Composable
 fun AppButton(
-    textoBoton: String
+    textoBoton: String,
+    modifier: Modifier = Modifier.fillMaxWidth(0.8f)
+        .height(70.dp)
+        .padding(vertical = 8.dp),
+    color: Int = R.color.violetaClaro,
+    forma: Shape = RoundedCornerShape(8.dp)
 ) {
-    Button(
-        onClick = { /*TODO*/ }
+    Button(onClick = { /*TODO*/ },
+        modifier = modifier,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = colorResource(color),
+        ),
+        shape = forma
     ) {
-    Text(textoBoton)
+        Text(text = textoBoton,
+            fontSize = 20.sp)
     }
 }
 
 @Composable
-@Preview(showBackground = true)
+@Preview
 fun AppButtonPreview(){
-    AppButton(" Ingresar")
+    AppButton("Ingresar")
+}
+
+@Composable
+fun LogoApp(
+    idImagen: Int, // (R.drawable.nombreImagen)
+    descripcion: String,
+    modifier: Modifier = Modifier.size(250.dp),
+    escala: ContentScale = ContentScale.Fit
+) {
+    Image(
+        painter = painterResource(id = idImagen),
+        contentDescription = descripcion,
+        modifier = modifier,
+        contentScale = escala
+    )
+}
+@Composable
+@Preview
+fun LogoAppPreview() {
+    LogoApp(
+        idImagen = R.drawable.iconosoy,
+        descripcion = "Logo CompMovil"
+    )
 }
 
 @Composable
 fun BodyLoginScreen(){
-    Row{
+    Row(){
         LogoApp()
-        Mensaje("SOY")
+        TextoInicial("SOY")
     }
-    Column {
+    Column() {
         AppButton("Ingresar")
 
     }
