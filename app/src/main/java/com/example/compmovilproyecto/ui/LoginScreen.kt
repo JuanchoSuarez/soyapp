@@ -2,8 +2,11 @@ package com.example.compmovilproyecto.ui
 
 import android.R.color.black
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -11,7 +14,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,10 +34,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 
+
 @Composable
 fun TextoInicial(
     mensaje: String,
-    color: Color = Color.White,
+    color: Color = colorResource(R.color.white),
     estilo: TextStyle = TextStyle.Default,
     modifier: Modifier = Modifier
 ) {
@@ -117,21 +123,110 @@ fun BodyLoginScreen(){
             idImagen = R.drawable.iconosoy,
             descripcion = stringResource(R.string.logo_soy)
         )
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
         TextoInicial(
             stringResource((R.string.usuario)),
             estilo = TextStyle(fontSize = 22.sp,
                 fontStyle = FontStyle.Italic),
             modifier = Modifier.padding(top = 15.dp, bottom = 10.dp)
         )
+        Spacer(
+            modifier = Modifier.height(50.dp)
+        )
+        FormularioRegistroUsuario()
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+
         TextoInicial(
             stringResource((R.string.contrasena)),
-            estilo = TextStyle(fontSize = 16.sp,),
-            color = colorResource(R.color.violetaClaro),
-            modifier = Modifier.padding(top = 5.dp, bottom = 55.dp)
+            estilo = TextStyle(fontSize = 22.sp,
+                fontStyle = FontStyle.Italic),
+            modifier = Modifier.padding(top = 15.dp, bottom = 10.dp)
         )
-        BotonGeneral(stringResource(R.string.ingresar),
+        Spacer(
+            modifier = Modifier.height(80.dp)
+        )
+        FormularioRegistroContraseña()
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+        AppButton(stringResource(R.string.ingresar),
             color = R.color.violetaApagado
         )
     }
 }
 
+@Composable
+fun LoginScreen(){
+    Box{
+
+        LogoApp(
+            idImagen = R.drawable.fondopantallaprincipal,
+            descripcion = stringResource(R.string.fondo_pantalla_principal),
+            modifier = Modifier.fillMaxSize(),
+            escala = ContentScale.Crop
+        )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxSize()
+        ){
+            BodyLoginScreen()
+        }
+
+    }
+}
+
+@Composable
+@Preview
+fun LogicScreenPreview(){
+    LoginScreen()
+}
+
+@Composable
+@Preview
+fun BodyLoginScreenPreview(){
+    BodyLoginScreen()
+}
+
+@Composable
+fun FormularioRegistroUsuario(
+    modifier: Modifier = Modifier
+    ){
+        TextField(
+            value = "",
+            onValueChange = { /*TODO*/ },
+            label = {Text(text = "USUARIO")},
+        )
+
+}
+
+
+@Composable
+fun FormularioRegistroContraseña(
+    modifier: Modifier = Modifier
+){
+    OutlinedTextField(
+        value = "",
+        onValueChange = { /*TODO*/ },
+        label = {Text(text = "CONTRASEÑA")},
+    )
+}
+@Preview()
+@Composable
+fun FormularioRegistroContraseñaPreview(
+    modifier: Modifier = Modifier
+){
+    FormularioRegistroContraseña()
+}
+
+@Preview()
+@Composable
+fun FormularioRegistroUsuarioPreview(
+    modifier: Modifier = Modifier
+){
+    FormularioRegistroUsuario()
+
+}
