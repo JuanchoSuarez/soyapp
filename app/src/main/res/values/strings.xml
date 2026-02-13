@@ -17,5 +17,8 @@
     <string name="usuario">Usuario</string>
     <string name="contrasena">contrasena</string>
     <string name="crear_cuenta">crear cuenta</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">\n\n</string>
+    <string name="repetir_contrasena">Repetir CONTRASENA</string>
 
 </resources>

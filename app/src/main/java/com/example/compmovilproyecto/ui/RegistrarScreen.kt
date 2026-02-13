@@ -131,12 +131,16 @@ fun BodyRegistrarScreen(){
         Spacer(
             modifier = Modifier.height(16.dp)
         )
-        AppButton(stringResource(stringResource(R.string.crear_cuenta)),
+        AppButton(stringResource(R.string.crear_cuenta),
             color = R.color.violetaApagado
         )
     }
 }
-
+@Composable
+@Preview
+fun BodyRegistrarScreenPreview(){
+    BodyRegistrarScreen()
+}
 @Composable
 fun RegistrarScreen(){
     Box{
@@ -163,11 +167,7 @@ fun RegistrarScreenPreview(){
     RegistrarScreen()
 }
 
-@Composable
-@Preview
-fun BodyRegistrarScreenPreview(){
-    BodyRegistrarScreen()
-}
+
 
 
 
@@ -176,34 +176,29 @@ fun FormularioRegistro(
     modifier: Modifier = Modifier
 ){Column {
     OutlinedTextField(
-        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
-        label = { Text(text = "Nombre") },
+        label = { Text(text = stringResource(R.string.nombre)) },
     )
     OutlinedTextField(
-        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
-        label = { Text(text = "Usuario") },
+        label = { Text(text = stringResource(R.string.usuario))},
     )
     OutlinedTextField(
-        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
-        label = { Text(text = "Email") },
+        label = { Text(text =stringResource(R.string.correo)) },
     )
     OutlinedTextField(
-        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
-        label = { Text(text = "CONTRASEÑA") },
+        label = { Text(text = stringResource(R.string.contrasena)) },
     )
     OutlinedTextField(
-        color = colorResource(R.color.white),
         value = "",
         onValueChange = { /*TODO*/ },
-        label = { Text(text = "Repetir CONTRASEÑA") },
+        label = { Text(text = stringResource(R.string.repetir_contrasena)) },
     )
 }
 }
