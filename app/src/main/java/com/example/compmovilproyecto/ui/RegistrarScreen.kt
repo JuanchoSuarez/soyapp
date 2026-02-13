@@ -174,27 +174,28 @@ fun BodyRegistrarScreenPreview(){
 @Composable
 fun FormularioRegistro(
     modifier: Modifier = Modifier
-){
+){Column {
     OutlinedTextField(
         value = "",
         onValueChange = { /*TODO*/ },
-        label = {Text(text = "Nombre")},
+        label = { Text(text = "Nombre") },
     )
     OutlinedTextField(
         value = "",
         onValueChange = { /*TODO*/ },
-        label = {Text(text = "Usuario")},
+        label = { Text(text = "Usuario") },
     )
     OutlinedTextField(
         value = "",
         onValueChange = { /*TODO*/ },
-        label = {Text(text = "Email")},
+        label = { Text(text = "Email") },
     )
     OutlinedTextField(
         value = "",
         onValueChange = { /*TODO*/ },
-        label = {Text(text = "CONTRASEÑA")},
+        label = { Text(text = "CONTRASEÑA") },
     )
+}
 }
 @Preview()
 @Composable
