@@ -131,7 +131,7 @@ fun BodyRegistrarScreen(){
         Spacer(
             modifier = Modifier.height(16.dp)
         )
-        AppButton(stringResource(R.string.ingresar),
+        AppButton(stringResource(stringResource(R.string.crear_cuenta)),
             color = R.color.violetaApagado
         )
     }
@@ -176,24 +176,34 @@ fun FormularioRegistro(
     modifier: Modifier = Modifier
 ){Column {
     OutlinedTextField(
+        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
         label = { Text(text = "Nombre") },
     )
     OutlinedTextField(
+        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
         label = { Text(text = "Usuario") },
     )
     OutlinedTextField(
+        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
         label = { Text(text = "Email") },
     )
     OutlinedTextField(
+        color = colorResource(R.color.white)
         value = "",
         onValueChange = { /*TODO*/ },
         label = { Text(text = "CONTRASEÑA") },
+    )
+    OutlinedTextField(
+        color = colorResource(R.color.white),
+        value = "",
+        onValueChange = { /*TODO*/ },
+        label = { Text(text = "Repetir CONTRASEÑA") },
     )
 }
 }
