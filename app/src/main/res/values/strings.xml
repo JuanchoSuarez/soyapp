@@ -7,4 +7,11 @@
     <string name="sign_up">Sign Up</string>
     <string name="log_in">Log in</string>
     <string name="fondo_pantalla_principal">Fondo pantalla principal</string>
+    <string name="foryou_title">SOY</string>
+    <string name="tab_para_ti">Para Ti</string>
+    <string name="tab_seguidos">Seguidos</string>
+    <string name="tab_novedades">Novedades</string>
+    <string name="recommended_reviews">Reseñas recomendadas para ti</string>
+    <string name="fondo_foryou">Fondo pantalla For You</string>
+
 </resources>
