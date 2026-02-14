@@ -167,10 +167,6 @@ fun RegistrarScreenPreview(){
     RegistrarScreen()
 }
 
-
-
-
-
 @Composable
 fun FormularioRegistro(
     modifier: Modifier = Modifier

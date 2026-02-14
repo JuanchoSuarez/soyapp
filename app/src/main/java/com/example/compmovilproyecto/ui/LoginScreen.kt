@@ -192,7 +192,7 @@ fun FormularioRegistroUsuario(
         TextField(
             value = "",
             onValueChange = { /*TODO*/ },
-            label = {Text(text = stringResource(R.string.usuario)},
+            label = {Text(text = stringResource(R.string.usuario))},
         )
 
 }
