@@ -52,9 +52,9 @@ fun ReviewsList(
     )
 
     LazyColumn(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(horizontal = 16.dp)
+        modifier = modifier
+        .fillMaxSize()
+        .padding(horizontal = 16.dp)
     ) {
 
         item {
@@ -76,9 +76,13 @@ fun ReviewsList(
 
 
 @Composable
-fun BodyForYouScreen() {
+fun BodyForYouScreen(
+    modifier: Modifier = Modifier
+) {
 
-    Column {
+    Column(
+        modifier = modifier
+    ) {
         TopSelectorButtons()
         ReviewsList()
     }
@@ -86,7 +90,9 @@ fun BodyForYouScreen() {
 
 
 @Composable
-fun ForYouScreen() {
+fun ForYouScreen(
+    modifier: Modifier = Modifier
+) {
 
     Box {
         BackgroundPlano()
