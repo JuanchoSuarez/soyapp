@@ -28,9 +28,7 @@ import com.example.compmovilproyecto.ui.utils.LogoSOY
 import com.example.compmovilproyecto.ui.utils.TextoGeneral
 
 @Composable
-fun BodyHomeScreen(
-    modifier: Modifier = Modifier
-){
+fun BodyHomeScreen(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ){

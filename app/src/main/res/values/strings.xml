@@ -5,7 +5,6 @@
     <string name="live_a_life_you_will_remember">\"Live a life you will remember\"</string>
     <string name="avicii_the_nights">- Avicii, The Nights</string>
 
-
     <string name="fondo_pantalla_principal">Fondo pantalla principal</string>
     <string name="foryou_title">SOY</string>
     <string name="tab_para_ti">Para Ti</string>
@@ -13,7 +12,6 @@
     <string name="tab_novedades">Novedades</string>
     <string name="recommended_reviews">Reseñas recomendadas para ti</string>
     <string name="fondo_foryou">Fondo pantalla For You</string>
-
 
     <string name="esta_canci_n_es_un_himno_del_electropop_moderno">Esta canción es un himno del electropop moderno...</string>
     <string name="musiclover">musiclover</string>
@@ -35,10 +33,51 @@
     <string name="contrasena">Contraseña</string>
     <string name="john_doe">John Doe</string>
     <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="logo_midnight_city">logo midnight city</string>
+    <string name="busqueda">busqueda</string>
+    <string name="fondo_plano_superior">Fondo plano superior</string>
+    <string name="buscar_placeholder">Buscar cancion o artista</string>
+    <string name="todos">Todos</string>
+    <string name="electropop">Electropop</string>
+    <string name="synth_pop">Synth-pop</string>
+    <string name="synthwave">Synthwave</string>
+    <string name="dream_pop">Dream Pop</string>
+    <string name="indie_pop">Indie Pop</string>
+    <string name="explorar_electropop">Explorar Electropop</string>
+    <string name="canciones">Canciones</string>
+    <string name="artistas">Artistas</string>
+    <string name="icono_de_casa">icono de casa</string>
+    <string name="icono">Icono</string>
+    <string name="icono_de_busqueda">icono_de_busqueda</string>
+    <string name="explorar">Explorar</string>
+    <string name="icono_de_crear">icono_de_crear</string>
+    <string name="crear">Crear</string>
+    <string name="icono_de_notificacion">icono_de_notificacion</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="icono_de_perfil">icono_de_perfil</string>
+    <string name="perfil">Perfil</string>
+    <string name="fondoinferior">fondoinferior</string>
     <string name="crear_resena">Crear Reseña</string>
     <string name="buscar_cancion">Buscar canción</string>
     <string name="buscar_cancion_o_artista">Buscar canción o artista...</string>
-    <string name="marcar_todas_como_le_das" />
-    <string name="notificaciones" />
+    <string name="buscar_cancion2">Buscar cancion</string>
+    <string name="backgroung_plano_superior_tipo_2">Backgroung plano superior tipo 2</string>
+    <string name="flecha_izquierda">flecha_izquierda</string>
+    <string name="crear_rese_a">Crear reseña</string>
+    <string name="joselito_records">joselito_records</string>
+    <string name="sunset">Sunset</string>
+    <string name="the_midnight">The Midnight</string>
+    <string name="esta_canci_n_la_rompe_mal">" Esta canción la rompe mal"</string>
+    <string name="background_superior">Background Superior</string>
+    <string name="marcar_como_leidas">marcar como leidas</string>
+    <string name="nombre2">Nombre</string>
+    <string name="usuario2">Usuario</string>
+    <string name="email2">Email</string>
+    <string name="contrase_a2">Contraseña</string>
+    <string name="email3">Email</string>
+    <string name="email4">Email</string>
+    <string name="contrasena3">Contraseña</string>
+    <string name="foto_de_perfil">foto de perfil</string>
+
 
 </resources>

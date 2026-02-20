@@ -1,12 +1,24 @@
 package com.example.compmovilproyecto.ui.screens
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -15,126 +27,127 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Review
+import com.example.compmovilproyecto.ui.data.local.LocalReviewProvider
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
+import com.example.compmovilproyecto.ui.utils.BotonGeneral
+import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
+import com.example.compmovilproyecto.ui.utils.LogoSOY
 import com.example.compmovilproyecto.ui.utils.ReviewCard
 import com.example.compmovilproyecto.ui.utils.TextoGeneral
-import com.example.compmovilproyecto.ui.utils.TopSelectorButtons
+import com.example.compmovilproyecto.ui.utils.TextoSOY
 
+@Composable
+fun HeaderForYouScreen(
+    modifier: Modifier = Modifier
+) {
+    Box() {
+        Image(
+            painter = painterResource(R.drawable.backgroundplanosuperior3),
+            contentDescription = stringResource(R.string.background_superior)
+        )
+        Column(
+            modifier = modifier.padding(horizontal = 16.dp, vertical = 10.dp)
+        ) {
+            Spacer(modifier = Modifier.height(15.dp))
+            Row() {
+                Spacer(modifier = Modifier.width(9.dp))
+                TextoSOY(tamano = 45.sp)
+                Spacer(modifier = Modifier.width(12.dp))
+                LogoSOY(modifier = Modifier.size(57.dp))
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+            ) {
+                Spacer(modifier = Modifier.width(5.dp))
+                BotonGeneral(texto = "Para ti",
+                    modifier = Modifier.padding(horizontal = 6.dp),
+                    fontSize = 14.sp,
+                    color = R.color.azulcal
+                )
+                BotonGeneral(texto = "Seguidos",
+                    modifier = Modifier.padding(horizontal = 6.dp),
+                    fontSize = 14.sp,
+                    color = R.color.violetaClaro
+                )
+                BotonGeneral(texto = "Novedades",
+                    modifier = Modifier.padding(horizontal = 6.dp),
+                    fontSize = 14.sp,
+                    color = R.color.violetaClaro
+                )
+            }
+        }
+    }
+}
 
 @Composable
 fun ReviewsList(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    textoId: Int
 ) {
+    val reviews = LocalReviewProvider.reviews
 
-    val reviews = listOf(
-        Review(
-
-            stringResource(R.string.musiclover),
-            "2023-08-01",
-            stringResource(R.string.midnight_city),
-            stringResource(R.string.m83),
-            stringResource(R.string.esta_canci_n_es_un_himno_del_electropop_moderno),
-            5
-        ),
-
-        Review(
-            stringResource(R.string.sarah_music),
-            "2023-08-01",
-            stringResource(R.string.the_mother_we_share),
-            stringResource(R.string.chvrches),
-            stringResource(R.string.incre_ble_esta_canci_n_nunca_pasa_de_moda),
-            5
-        ),
-
-        Review(
-            user = stringResource(R.string.joselito_records),
-            fecha = "2025-11-23",
-            song = stringResource(R.string.sunset),
-            artist = stringResource (R.string.the_midnight),
-            review = stringResource (R.string.esta_canci_n_la_rompe_mal),
-            rating = 5
-        )
-
-    )
     LazyColumn(
-        modifier = modifier
-        .fillMaxSize()
-        .padding(horizontal = 16.dp)
+        modifier = modifier.fillMaxSize(),
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
     ) {
 
         item {
+            Spacer(modifier = Modifier.height(20.dp))
             Text(
-                text = stringResource(R.string.rese_as_recomendadas_para_ti),
+                text = stringResource(textoId),
                 color = Color.White,
-                fontSize = 14.sp,
-                modifier = Modifier.padding(vertical = 12.dp)
+                fontSize = 16.sp,
+                modifier = Modifier.padding(bottom = 12.dp),
+                fontWeight = FontWeight.Bold
             )
         }
 
         items(reviews) { review ->
-            Spacer(modifier = Modifier.height(20.dp))
-            ReviewCard(review)
+            ReviewCard(review = review)
+            Spacer(modifier = Modifier.height(17.dp))
         }
-
     }
 }
-
 
 @Composable
 fun BodyForYouScreen(
     modifier: Modifier = Modifier
 ) {
-
-    Column(
-        modifier = modifier
-    ) {
-        TopSelectorButtons()
-        ReviewsList()
-    }
-}
-
-
-@Composable
-fun ForYouScreen(
-    modifier: Modifier = Modifier
-) {
-
-    Box {
+    Box(modifier = modifier) {
         BackgroundPlano()
         Column(
+            modifier = Modifier.fillMaxSize()
         ) {
-            TextoGeneral(
-                texto = "SOY",
-                estilo = TextStyle(
-                    fontSize = 32.sp,
-                    fontWeight = FontWeight.Bold
-                ),
-                modifier = Modifier.padding(start = 16.dp, top = 40.dp)
-            )
-            BodyForYouScreen()
+            ReviewsList(modifier = Modifier.weight(1f), textoId = R.string.rese_as_recomendadas_para_ti)
         }
     }
 }
 
-
+@Composable
+fun ForYouScreen() {
+    Scaffold(
+        bottomBar = {
+            FooterExplorerScreen()
+        }
+    ) { paddingValores ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValores)
+        ) {
+            HeaderForYouScreen()
+            BodyForYouScreen(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .weight(1f)
+            )
+        }
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
 fun ForYouScreenPreview() {
     ForYouScreen()
-}
-
-@Preview(showBackground = true)
-@Composable
-fun ReviewCardPreview() {
-    ReviewCard(
-        Review(
-            "musiclover",
-            "2023-08-01",
-            "Midnight City",
-            "M83",
-            "Review ejemplo...",
-            5
-        )
-    )
 }

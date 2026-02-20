@@ -21,7 +21,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.model.Song
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.BackgroundSOY
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
@@ -39,7 +38,6 @@ fun HeaderCreateReviewScreen(
         )
         
         Column() {
-            Spacer(modifier = Modifier.height(10.dp))
             Image(
                 painter = painterResource(R.drawable.flechaizquierdaicono),
                 contentDescription = stringResource(R.string.flecha_izquierda),

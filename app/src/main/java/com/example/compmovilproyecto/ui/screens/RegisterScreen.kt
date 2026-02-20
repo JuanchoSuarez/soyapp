@@ -43,11 +43,9 @@ import com.example.compmovilproyecto.ui.utils.TextoGeneral
 import com.example.compmovilproyecto.ui.utils.TextoSOY
 
 @Composable
-fun BodyRegisterScreen(
-    modifier: Modifier = Modifier
-){
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+fun BodyRegisterScreen(){
+    Column (
+        modifier = Modifier.padding(horizontal = 35.dp)
     ){
         Spacer(modifier = Modifier.height(60.dp))
         Row(
@@ -69,7 +67,7 @@ fun BodyRegisterScreen(
         )
 
         FormularioGeneral(
-            idLabel = (R.string.usuario),
+            idLabel = R.string.nombre2,
             idValue = (R.string.john_doe)
         )
 
@@ -82,21 +80,21 @@ fun BodyRegisterScreen(
         )
 
         FormularioGeneral(
-            idLabel = (R.string.usuario),
+            idLabel = R.string.usuario2,
             idValue = (R.string.john_doe)
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
         TextoGeneral(
-            texto = stringResource(R.string.email),
+            texto = stringResource(R.string.email3),
             estilo = TextStyle(fontSize = 15.sp,
                 fontWeight = FontWeight.Bold)
         )
 
         FormularioGeneral(
-            idLabel = (R.string.usuario),
-            idValue = (R.string.john_doe)
+            idLabel = R.string.email2,
+            idValue = (R.string.email4)
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -108,8 +106,8 @@ fun BodyRegisterScreen(
         )
 
         FormularioGeneral(
-            idLabel = (R.string.usuario),
-            idValue = (R.string.john_doe)
+            idLabel = R.string.contrase_a2,
+            idValue = R.string.contrasena3
         )
 
         Spacer(modifier = Modifier.height(30.dp))
@@ -120,8 +118,7 @@ fun BodyRegisterScreen(
 }
 
 @Composable
-fun RegisterScreen(
-    modifier: Modifier = Modifier){
+fun RegisterScreen(){
     Box{
         BackgroundPlano()
         Column(

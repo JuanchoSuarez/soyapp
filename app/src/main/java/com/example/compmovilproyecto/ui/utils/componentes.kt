@@ -35,7 +35,6 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.screens.IconoInferior
 
 // AQUI SE ENCUENTRAN TODOS LOS COMPONENTES QUE SE USARAN EN LA APP
 // COMO BOTONES, IMAGENES, TEXTOS, ETC.
@@ -67,10 +66,10 @@ fun TextoSOY(
     tamano: TextUnit
 ) {
     Text(
-        text = stringResource(R.string.soy), // El texto es parte de la identidad
+        text = stringResource(R.string.soy),
         fontSize = tamano,
         fontFamily = FontFamily.Cursive,
-        color = Color.White, // Asumimos blanco por el fondo oscuro
+        color = Color.White,
         modifier = modifier
     )
 }
@@ -95,7 +94,7 @@ fun LogoSOY(
 @Composable
 fun BotonGeneral(
     modifier: Modifier = Modifier
-        .fillMaxWidth(0.8f)
+        .fillMaxWidth()
         .height(70.dp)
         .padding(vertical = 8.dp),
     texto: String,
@@ -123,28 +122,28 @@ fun BotonGeneral(
 //--------------------------------------------------------------------------------------------------
 @Composable
 fun FormularioGeneral(
-    modifier: Modifier = Modifier
-        .fillMaxWidth(0.8f)
-        .height(70.dp)
-        .padding(vertical = 8.dp)
-        .border(
-            width = 3.dp,
-            color = colorResource(R.color.violetaClaro),
-            shape = RoundedCornerShape(8.dp)
-        )
-        .background(
-            color = colorResource(R.color.grisClaro),
-            shape = RoundedCornerShape(8.dp)
-        ),
-    forma: Shape = RoundedCornerShape(8.dp),
     idLabel: Int,
-    idValue: Int
+    idValue: Int,
+    modifier: Modifier = Modifier,
+    forma: Shape = RoundedCornerShape(8.dp)
 ) {
     TextField(
         value = stringResource(id = idValue),
-        onValueChange = { /*TODO: Lo dejamos así por ahora*/ },
-        label = { Text(text = stringResource(id = idLabel)) },
-        modifier = modifier,
+        onValueChange = { /*TODO*/ },
+        label = { Text(text = stringResource(id = idLabel), color = Color.White) },
+        modifier = modifier
+            .fillMaxWidth()
+            .height(70.dp)
+            .padding(vertical = 8.dp)
+            .border(
+                width = 2.dp,
+                color = colorResource(R.color.violetaApagado),
+                shape = forma
+            )
+            .background(
+                color = colorResource(R.color.azul2),
+                shape = forma
+            ),
         shape = forma,
         colors = TextFieldDefaults.colors(
             focusedContainerColor = Color.Transparent,
@@ -156,7 +155,6 @@ fun FormularioGeneral(
         )
     )
 }
-
 
 //--------------------------------------------------------------------------------------------------
 // BACKGROUND PLANO -> (LoginScreen, RegisterScreen)
