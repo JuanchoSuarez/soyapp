@@ -131,7 +131,7 @@ fun ReviewsList(
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
 
-                            // 🔥 Likes y comentarios dinámicos según posición
+                            // Likes y comentarios dinámicos según posición
                             Image(
                                 painter = painterResource(
                                     when (index) {
@@ -145,7 +145,7 @@ fun ReviewsList(
                                 modifier = Modifier.height(34.dp)
                             )
 
-                            // 🔥 Editar / borrar
+                            // Editar / borrar
                             Image(
                                 painter = painterResource(R.drawable.editaryborrarbotones),
                                 contentDescription = "Editar y borrar",
