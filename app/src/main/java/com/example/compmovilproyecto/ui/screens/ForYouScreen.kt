@@ -1,18 +1,12 @@
 package com.example.compmovilproyecto.ui.screens
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -20,11 +14,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.model.Review
+import com.example.compmovilproyecto.ui.data.Review
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.ReviewCard
 import com.example.compmovilproyecto.ui.utils.TextoGeneral
 import com.example.compmovilproyecto.ui.utils.TopSelectorButtons
+
 
 @Composable
 fun ReviewsList(
@@ -33,6 +28,7 @@ fun ReviewsList(
 
     val reviews = listOf(
         Review(
+
             stringResource(R.string.musiclover),
             "2023-08-01",
             stringResource(R.string.midnight_city),
@@ -48,9 +44,18 @@ fun ReviewsList(
             stringResource(R.string.chvrches),
             stringResource(R.string.incre_ble_esta_canci_n_nunca_pasa_de_moda),
             5
-        )
-    )
+        ),
 
+        Review(
+            user = stringResource(R.string.joselito_records),
+            fecha = "2025-11-23",
+            song = stringResource(R.string.sunset),
+            artist = stringResource (R.string.the_midnight),
+            review = stringResource (R.string.esta_canci_n_la_rompe_mal),
+            rating = 5
+        )
+
+    )
     LazyColumn(
         modifier = modifier
         .fillMaxSize()

@@ -1,5 +1,6 @@
 package com.example.compmovilproyecto.ui.utils
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -19,14 +21,20 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.model.Review
+import com.example.compmovilproyecto.ui.data.Review
+import com.example.compmovilproyecto.ui.model.Song
+import com.example.compmovilproyecto.ui.screens.IconoInferior
 
 // AQUI SE ENCUENTRAN TODOS LOS CONTENEDORES QUE SE USARAN EN LA APP
 // COMO ROW, COLUMN, BOX, CARD Y ETC
@@ -56,8 +64,8 @@ fun ReviewCard(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            TextoCancion(cancion = review.song)
-            TextoArtista(artista = review.artist)
+            TextoCancion(nombreCancion = review.song)
+            TextoArtista(nombreArtista = review.artist)
             Spacer(modifier = Modifier.height(6.dp))
             TextoRating(rating = review.rating)
             Spacer(modifier = Modifier.height(8.dp))
@@ -101,6 +109,95 @@ fun TopSelectorButtons() {
                     fontSize = 14.sp
                 )
             }
+        }
+    }
+}
+
+//--------------------------------------------------------------------------------------------------
+// CARD PARA MOSTRAR CANCION -> (CreateReviewScreen)
+//--------------------------------------------------------------------------------------------------
+@Composable
+fun SongCard(cancion: Song) {
+    Card(
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1C2A)),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            // nombre de la cancion
+            Text(
+                text = cancion.titulo,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                fontSize = 15.sp
+            )
+            // artista
+            Text(
+                text = cancion.artista,
+                color = Color.Gray,
+                fontSize = 13.sp
+            )
+        }
+    }
+}
+
+
+//--------------------------------------------------------------------------------------------------
+// FOOTER GENERAL -> (Todas las principales)
+//--------------------------------------------------------------------------------------------------
+@Composable
+fun FooterExplorerScreen(){
+    Box(
+        modifier = Modifier.fillMaxWidth()
+    ){
+        Image(
+            painter = painterResource(R.drawable.backgroundplanoinferior),
+            contentDescription = stringResource(R.string.fondoinferior)
+        )
+        Row (modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 15.dp, horizontal = 20.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment = Alignment.CenterVertically
+        ){
+            IconoInferior(
+                modifier = Modifier,
+                imagenId = R.drawable.casaicono,
+                descripcionId = R.string.icono_de_casa,
+                nombreIconoId = R.string.icono
+            )
+            Spacer(modifier = Modifier.width(10.dp))
+
+            IconoInferior(
+                modifier = Modifier,
+                imagenId = R.drawable.busquedaicono,
+                descripcionId = R.string.icono_de_busqueda,
+                nombreIconoId = R.string.explorar
+            )
+            Spacer(modifier = Modifier.width(10.dp))
+
+            IconoInferior(
+                modifier = Modifier,
+                imagenId = R.drawable.crearicono,
+                descripcionId = R.string.icono_de_crear,
+                nombreIconoId = R.string.crear
+            )
+            Spacer(modifier = Modifier.width(10.dp))
+
+            IconoInferior(
+                modifier = Modifier,
+                imagenId = R.drawable.notificacionicono,
+                descripcionId = R.string.icono_de_notificacion,
+                nombreIconoId = R.string.notificaciones
+            )
+            Spacer(modifier = Modifier.width(10.dp))
+
+            IconoInferior(
+                modifier = Modifier,
+                imagenId = R.drawable.usuarioicono,
+                descripcionId = R.string.icono_de_perfil,
+                nombreIconoId = R.string.perfil
+            )
         }
     }
 }
