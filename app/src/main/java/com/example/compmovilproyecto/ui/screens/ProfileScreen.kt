@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -30,8 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.data.local.LocalReviewProvider
-import com.example.compmovilproyecto.ui.utils.BackgroundPlano
+import com.example.compmovilproyecto.ui.data.Review
 import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 import com.example.compmovilproyecto.ui.utils.ReviewCard
@@ -39,7 +37,6 @@ import com.example.compmovilproyecto.ui.utils.ReviewCard
 @Composable
 fun HeaderProfileScreen(){
     Box(
-        modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
         BackgroundPlanoSuperior()
@@ -65,7 +62,7 @@ fun HeaderProfileScreen(){
                 fontSize = 10.sp,
                 fontWeight = FontWeight.Bold
             )
-            Row{
+            Row(){
                 Text(
                     modifier = Modifier.padding(top = 12.dp),
                     text =" 2",
@@ -91,8 +88,8 @@ fun HeaderProfileScreen(){
                 )
 
             }
-            Column{
-                Row{
+            Column(){
+                Row(){
                     Text(
                         modifier = Modifier.padding(top = 12.dp),
                         text ="Resenas",
@@ -122,74 +119,7 @@ fun HeaderProfileScreen(){
     }
 }
 
-@Composable
-fun ProfileScreen() {
-    Scaffold(
-        bottomBar = {
-            FooterExplorerScreen()
-        }
-    ) { paddingValores ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValores)
-        ) {
-            HeaderProfileScreen()
-            BodyProfileScreen(
-                modifier = Modifier
-                    .fillMaxSize()
-            )
-        }
-    }
-}
-@Composable
-fun BodyProfileScreen(
-    modifier: Modifier = Modifier
-) {
-    Box(modifier = modifier) {
-        BackgroundPlanoSuperior()
-        Column(
-            modifier = Modifier.fillMaxSize()
-        ) {
-            ReviewList(modifier = Modifier.weight(1f), textoId = R.string.mis_reseñas)
-        }
-    }
-}
-@Preview (showBackground = true)
-@Composable
-fun ProfileScreenPreview() {
-    ProfileScreen()
-}
 
-@Composable
-fun ReviewList(
-    modifier: Modifier = Modifier,
-    textoId: Int
-) {
-    val reviews = LocalReviewProvider.reviews
-
-    LazyColumn(
-        modifier = modifier.fillMaxSize(),
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
-    ) {
-
-        item {
-            Spacer(modifier = Modifier.height(20.dp))
-            Text(
-                text = stringResource(textoId),
-                color = Color.White,
-                fontSize = 16.sp,
-                modifier = Modifier.padding(bottom = 12.dp),
-                fontWeight = FontWeight.Bold
-            )
-        }
-
-        items(reviews) { review ->
-            ReviewCard(review = review)
-            Spacer(modifier = Modifier.height(17.dp))
-        }
-    }
-}
 @Composable
 fun ProfileImage(
     modifier: Modifier = Modifier,
@@ -210,6 +140,28 @@ fun ProfileImage(
     )
 }
 
+@Composable
+fun ProfileScreen() {
+    Scaffold(
+        bottomBar = {
+            FooterExplorerScreen()
+        }
+    ) { paddingValores ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValores)
+        ) {
+            HeaderProfileScreen()
+            BodyForYouScreen(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .weight(1f)
+            )
+        }
+    }
+}
+
 
 
 @Composable
@@ -225,4 +177,10 @@ fun ProfileImagePreview() {
 @Preview
 fun HeaderProfileScreenPreview() {
     HeaderProfileScreen()
+}
+
+@Composable
+@Preview
+fun ProfileScreenPreview() {
+    ProfileScreen()
 }
