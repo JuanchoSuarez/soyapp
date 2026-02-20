@@ -25,6 +25,7 @@ import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.ReviewCard
 import com.example.compmovilproyecto.ui.utils.TextoGeneral
 import com.example.compmovilproyecto.ui.utils.TopSelectorButtons
+import com.google.android.libraries.places.api.model.Review
 
 @Composable
 fun ReviewsList(
@@ -33,7 +34,7 @@ fun ReviewsList(
 
     val reviews = listOf(
         Review(
-            
+
             stringResource(R.string.musiclover),
             "2023-08-01",
             stringResource(R.string.midnight_city),
@@ -49,9 +50,18 @@ fun ReviewsList(
             stringResource(R.string.chvrches),
             stringResource(R.string.incre_ble_esta_canci_n_nunca_pasa_de_moda),
             5
-        )
-    )
+        ),
 
+        Review(
+            user = stringResource("joselito_records"),
+            fecha = "2025-11-23",
+            song = stringResource("Sunset"),
+            artist = stringResource("The Midnight"),
+            review = stringResource (" Esta canción la rompe mal"),
+            rating = 5
+        )
+
+    )
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
