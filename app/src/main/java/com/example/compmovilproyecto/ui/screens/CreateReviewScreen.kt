@@ -59,19 +59,20 @@ fun HeaderCreateReviewScreen(
     }
 }
 
-/*
-
-// pantalla principal con el fondo
 @Composable
-fun CreateReviewScreen(
+fun BarraBusquedaReviewScreen(
     onBack: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier) {
 
+        Image(
+            painter = painterResource(R.drawable.backgroundsoysuperior),
+            contentDescription = "background superior"
+        )
+
         Column {
-            HeaderCreateReviewScreen()
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(20.dp))
             Text(
                 text = stringResource(R.string.buscar_cancion2),
                 color = Color.White,
@@ -86,12 +87,10 @@ fun CreateReviewScreen(
                 onValueChange = {}
             )
             Spacer(modifier = Modifier.height(2.dp))
-            BodyExplorerScreen()
 
         }
     }
 }
-*/
 
 @Composable
 fun CreateReviewScreen() {
@@ -105,6 +104,7 @@ fun CreateReviewScreen() {
                 .padding(paddingValores)
         ) {
             HeaderCreateReviewScreen()
+            BarraBusquedaReviewScreen()
             BodyExplorerScreen(
                 modifier = Modifier
                     .fillMaxWidth()
