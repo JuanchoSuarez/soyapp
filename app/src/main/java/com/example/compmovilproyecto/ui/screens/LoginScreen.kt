@@ -45,9 +45,11 @@ import com.example.compmovilproyecto.ui.utils.TextoSOY
 import com.example.compmovilproyecto.ui.utils.ReviewCard
 
 @Composable
-fun BodyLoginScreen(){
+fun BodyLoginScreen(
+    modifier: Modifier = Modifier
+){
     Column(
-        modifier = Modifier.padding(horizontal = 35.dp)
+        modifier = modifier.padding(horizontal = 35.dp)
     ){
         Spacer(modifier = Modifier.height(140.dp))
         Row(
@@ -95,8 +97,10 @@ fun BodyLoginScreen(){
 }
 
 @Composable
-fun LoginScreen(){
-    Box{
+fun LoginScreen(
+    modifier: Modifier = Modifier
+){
+    Box(modifier = modifier){
         BackgroundPlano()
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,

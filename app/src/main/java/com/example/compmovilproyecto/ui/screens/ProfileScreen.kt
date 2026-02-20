@@ -36,8 +36,11 @@ import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 import com.example.compmovilproyecto.ui.utils.ReviewCard
 
 @Composable
-fun HeaderProfileScreen(){
+fun HeaderProfileScreen(
+    modifier: Modifier = Modifier
+){
     Box(
+        modifier = modifier,
         contentAlignment = Alignment.Center
     ) {
         BackgroundPlanoSuperior()
@@ -142,11 +145,13 @@ fun ProfileImage(
 }
 
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(
+    modifier: Modifier = Modifier
+) {
     Scaffold(
+        modifier = modifier,
         bottomBar = {
-            FooterExplorerScreen(
-            )
+            FooterExplorerScreen()
         }
     ) { paddingValores ->
         Column(
@@ -163,7 +168,6 @@ fun ProfileScreen() {
         }
     }
 }
-
 
 
 @Composable

@@ -44,9 +44,11 @@ import com.example.compmovilproyecto.ui.utils.TextoGeneral
 import com.example.compmovilproyecto.ui.utils.TextoSOY
 
 @Composable
-fun BodyRegisterScreen(){
+fun BodyRegisterScreen(
+    modifier: Modifier = Modifier
+){
     Column (
-        modifier = Modifier.padding(horizontal = 35.dp)
+        modifier = modifier.padding(horizontal = 35.dp)
     ){
         Spacer(modifier = Modifier.height(60.dp))
         Row(
@@ -119,8 +121,10 @@ fun BodyRegisterScreen(){
 }
 
 @Composable
-fun RegisterScreen(){
-    Box{
+fun RegisterScreen(
+    modifier: Modifier = Modifier
+){
+    Box(modifier = modifier){
         BackgroundPlano()
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,

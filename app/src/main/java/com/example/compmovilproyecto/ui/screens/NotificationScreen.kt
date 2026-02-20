@@ -168,10 +168,13 @@ fun NotificationCard(
 }
 
 @Composable
-fun NotificationScreen() {
+fun NotificationScreen(
+    modifier: Modifier = Modifier
+) {
     val listaBasica = LocalNotificationProvider.notificaciones
 
     Scaffold(
+        modifier = modifier,
         bottomBar = {
             FooterExplorerScreen()
         }

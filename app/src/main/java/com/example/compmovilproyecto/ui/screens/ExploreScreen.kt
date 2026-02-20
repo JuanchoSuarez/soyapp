@@ -51,7 +51,7 @@ import com.example.compmovilproyecto.ui.utils.TextoCancion
 
 @Composable
 fun FiltroGeneros(
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
     LazyRow(
         modifier = modifier
@@ -152,8 +152,10 @@ fun BarraBusqueda(
 }
 
 @Composable
-fun HeaderExplorerScreen() {
-    Box {
+fun HeaderExplorerScreen(
+    modifier: Modifier = Modifier
+) {
+    Box (modifier = modifier) {
         BackgroundPlanoSuperior()
         Column(
             modifier = Modifier.padding(20.dp)
@@ -229,7 +231,7 @@ fun GenreTag(
     Surface(
         color = colorResource(R.color.grisClaro),
         shape = RoundedCornerShape(50.dp),
-        modifier = Modifier
+        modifier = modifier
             .border(
                 width = 1.dp,
                 color = colorResource(R.color.violetaClaro),
@@ -250,7 +252,9 @@ fun SongContent(
     modifier: Modifier = Modifier,
     cancion: Song
 ) {
-    Column {
+    Column (
+        modifier = modifier
+    ){
         TextoCancion(nombreCancion = cancion.nombre)
 
         Spacer(modifier = Modifier.height(5.dp))
@@ -323,7 +327,7 @@ fun BodyExplorerScreen(
 
 @Composable
 fun IconoInferior(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     imagenId: Int,
     descripcionId: Int,
     nombreIconoId: Int
@@ -348,8 +352,11 @@ fun IconoInferior(
 }
 
 @Composable
-fun ExplorerScreen() {
+fun ExplorerScreen(
+    modifier: Modifier = Modifier,
+) {
     Scaffold(
+        modifier = modifier,
         bottomBar = {
             FooterExplorerScreen()
         }

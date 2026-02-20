@@ -29,10 +29,12 @@ import com.example.compmovilproyecto.ui.utils.LogoSOY
 import com.example.compmovilproyecto.ui.utils.TextoGeneral
 
 @Composable
-fun BodyHomeScreen(){
+fun BodyHomeScreen(
+    modifier: Modifier = Modifier
+){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(horizontal = 35.dp)
+        modifier = modifier.padding(horizontal = 35.dp)
     ){
         Spacer(modifier = Modifier.height(115.dp))
 
@@ -78,7 +80,7 @@ fun BodyHomeScreen(){
 fun HomeScreen(
     modifier: Modifier = Modifier
 ){
-    Box(modifier = Modifier.fillMaxSize()){
+    Box(modifier = modifier.fillMaxSize()){
         BackgroundPlano()
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
