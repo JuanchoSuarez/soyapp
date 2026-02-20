@@ -20,7 +20,6 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -41,11 +40,9 @@ import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Song
 import com.example.compmovilproyecto.ui.data.local.LocalSongsProvider
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
 import com.example.compmovilproyecto.ui.utils.BackgroundSOY
 import com.example.compmovilproyecto.ui.utils.BotonGeneral
-import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 import com.example.compmovilproyecto.ui.utils.TextoArtista
 import com.example.compmovilproyecto.ui.utils.TextoCancion
 
@@ -115,7 +112,7 @@ fun BarraBusqueda(
     forma: Shape = RoundedCornerShape(8.dp)
 ) {
     TextField(
-        value = valorActual, // Ahora el valor es dinámico
+        value = valorActual,
         onValueChange = onValueChange,
         modifier = modifier
             .fillMaxWidth()
@@ -296,14 +293,14 @@ fun SongCard(
                 descripcionId = R.string.logo_midnight_city
             )
             Spacer(modifier = Modifier.width(14.dp))
-            SongContent(modifier = modifier, cancion = cancion)
+            SongContent(cancion = cancion)
         }
     }
 }
 
 @Composable
 fun BodyExplorerScreen(
-    modifier: Modifier = Modifier // Ahora recibe el modificador
+    modifier: Modifier = Modifier
 ) {
     val allSongs = LocalSongsProvider.songs
 
@@ -355,26 +352,18 @@ fun IconoInferior(
 fun ExplorerScreen(
     modifier: Modifier = Modifier,
 ) {
-    Scaffold(
-        modifier = modifier,
-        bottomBar = {
-            FooterExplorerScreen()
-        }
-    ) { paddingValores ->
-        Column(
+    Column(
+        modifier = modifier.fillMaxSize()
+    ) {
+        HeaderExplorerScreen()
+        BodyExplorerScreen(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValores)
-        ) {
-            HeaderExplorerScreen()
-            BodyExplorerScreen(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-            )
-        }
+                .fillMaxWidth()
+                .weight(1f)
+        )
     }
 }
+
 
 
 @Composable
@@ -465,18 +454,9 @@ fun IconoInferiorPreview() {
     )
 }
 
-@Composable
-@Preview
-fun FooterExplorerScreenPreview() {
-    FooterExplorerScreen()
-}
 
 @Composable
 @Preview
 fun ExplorerScreenPreview() {
-    CompMovilProyectoTheme {
-        ExplorerScreen()
-    }
+    ExplorerScreen()
 }
-
-

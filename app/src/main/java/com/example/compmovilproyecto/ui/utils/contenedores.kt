@@ -1,8 +1,6 @@
 package com.example.compmovilproyecto.ui.utils
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -19,16 +17,11 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -122,61 +115,3 @@ fun SongCard(cancion: Song) {
 //--------------------------------------------------------------------------------------------------
 // FOOTER GENERAL -> (Todas las principales)
 //--------------------------------------------------------------------------------------------------
-@Composable
-fun FooterExplorerScreen(){
-    Box(
-        modifier = Modifier.fillMaxWidth()
-    ){
-        Image(
-            painter = painterResource(R.drawable.backgroundplanoinferior),
-            contentDescription = stringResource(R.string.fondoinferior),
-            modifier = Modifier.matchParentSize(),
-            contentScale = ContentScale.Crop
-        )
-        Row (modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 15.dp, horizontal = 20.dp),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
-        ){
-            IconoInferior(
-                modifier = Modifier,
-                imagenId = R.drawable.casaicono,
-                descripcionId = R.string.icono_de_casa,
-                nombreIconoId = R.string.icono
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-
-            IconoInferior(
-                modifier = Modifier,
-                imagenId = R.drawable.busquedaicono,
-                descripcionId = R.string.icono_de_busqueda,
-                nombreIconoId = R.string.explorar
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-
-            IconoInferior(
-                modifier = Modifier,
-                imagenId = R.drawable.crearicono,
-                descripcionId = R.string.icono_de_crear,
-                nombreIconoId = R.string.crear
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-
-            IconoInferior(
-                modifier = Modifier,
-                imagenId = R.drawable.notificacionicono,
-                descripcionId = R.string.icono_de_notificacion,
-                nombreIconoId = R.string.notificaciones
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-
-            IconoInferior(
-                modifier = Modifier,
-                imagenId = R.drawable.usuarioicono,
-                descripcionId = R.string.icono_de_perfil,
-                nombreIconoId = R.string.perfil
-            )
-        }
-    }
-}
