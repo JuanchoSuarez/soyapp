@@ -1,5 +1,6 @@
 package com.example.compmovilproyecto.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -110,7 +111,16 @@ fun BodyRegisterScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        BotonGeneral(texto = stringResource(R.string.crear_cuenta))
+        BotonGeneral(
+            texto = stringResource(R.string.crear_cuenta),
+            onClick = {
+                Log.d("RegisterScreen", "Nombre: $textoNombre")
+                Log.d("RegisterScreen", "Usuario: $textoUsuario")
+                Log.d("RegisterScreen", "Usuario: $textoUsuario")
+                Log.d("RegisterScreen", "Contraseña: $textoContrasena")
+            }
+        )
+
 
     }
 }

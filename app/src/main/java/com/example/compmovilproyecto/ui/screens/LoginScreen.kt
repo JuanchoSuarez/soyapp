@@ -1,5 +1,6 @@
 package com.example.compmovilproyecto.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -81,7 +82,13 @@ fun BodyLoginScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(50.dp))
 
-        BotonGeneral(texto = stringResource(R.string.ingresar))
+        BotonGeneral(
+            texto = stringResource(R.string.ingresar),
+            onClick = {
+                Log.d("LoginScreen", "Usuario: $textoUsuario")
+                Log.d("LoginScreen","Contrasena: $textoContrasena")
+            }
+        )
     }
 }
 

@@ -102,10 +102,11 @@ fun BotonGeneral(
     texto: String,
     fontSize: TextUnit = 20.sp,
     color: Int = R.color.violetaClaro,
-    forma: Shape = RoundedCornerShape(8.dp)
+    forma: Shape = RoundedCornerShape(8.dp),
+    onClick : () -> Unit = {}
 ) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = onClick,
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
             containerColor = colorResource(color),

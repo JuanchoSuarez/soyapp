@@ -20,7 +20,9 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
     primary = Morado,
     secondary = Purple500,
-    tertiary = Teal700
+    tertiary = Teal700,
+    surface = Vclaro,
+
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
