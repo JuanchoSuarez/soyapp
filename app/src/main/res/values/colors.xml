@@ -13,13 +13,14 @@
     <color name="azulMedio">#005cc1</color>
     <color name="azulClaro">#008bf2</color>
     <color name="violetaApagado">#7b5e96</color>
+    <color name="vclaro">#3c3d5a</color>
+    <color name="vclaroletra">#e9d4ff</color>
     <color name="grisClaro">#504978</color>
     <color name="violetaClaro">#a461c1</color>
     <color name="purpura">#af34dd</color>
     <color name="morado">#8e19b8</color>
     <color name="magentaOscuro">#81005c</color>
     <color name="Burdeos">#400116</color>
-
-
-
+    <color name="azulcal">#64779c</color>
+    <color name="azul2">#695e92</color>
 </resources>
