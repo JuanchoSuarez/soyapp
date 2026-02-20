@@ -2,7 +2,7 @@ package com.example.compmovilproyecto.ui.data
 
 import androidx.annotation.DrawableRes
 
-data class Notificacion(
+data class Notification(
     @DrawableRes val imagenPerfilId: Int,
     val nombreUsuario: String,
     val textoAccion: String,

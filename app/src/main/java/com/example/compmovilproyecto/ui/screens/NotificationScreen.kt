@@ -35,7 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.data.Notificacion
+import com.example.compmovilproyecto.ui.data.Notification
 import com.example.compmovilproyecto.ui.data.local.LocalNotificationProvider
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
@@ -102,7 +102,7 @@ fun HeaderNotificationScreen(
 @Composable
 fun NotificationCard(
     modifier: Modifier = Modifier,
-    datos: Notificacion
+    datos: Notification
 ) {
 
     Card(
