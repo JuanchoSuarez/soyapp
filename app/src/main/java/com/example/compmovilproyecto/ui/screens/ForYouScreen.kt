@@ -131,6 +131,7 @@ fun ReviewsList(
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
 
+
                             // Likes y comentarios dinámicos según posición
                             Image(
                                 painter = painterResource(
