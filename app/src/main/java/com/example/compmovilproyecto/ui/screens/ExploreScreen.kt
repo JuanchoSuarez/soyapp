@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Song
 import com.example.compmovilproyecto.ui.data.local.LocalSongsProvider
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
 import com.example.compmovilproyecto.ui.utils.BackgroundSOY
 import com.example.compmovilproyecto.ui.utils.BotonGeneral
@@ -372,101 +373,126 @@ fun ExplorerScreen() {
 @Composable
 @Preview
 fun BackgroundSuperior() {
-    BackgroundPlanoSuperior()
+    CompMovilProyectoTheme {
+        BackgroundPlanoSuperior()
+    }
 }
 
 @Composable
 @Preview
 fun BotonGeneralPreview() {
+    CompMovilProyectoTheme{
     BotonGeneral(
         modifier = Modifier, texto = "Artista",
         color = R.color.violetaApagado
     )
+    }
 }
 
 @Composable
 @Preview
 fun BarraBusquedaPreview() {
+    CompMovilProyectoTheme{
     BarraBusqueda(
         modifier = Modifier,
         valorActual = "",
         onValueChange = {}
     )
+    }
 }
 
 @Composable
 @Preview
 fun SongImagePreview() {
+    CompMovilProyectoTheme{
     SongImage(
         imagenId = R.drawable.midnight_city,
         descripcionId = R.string.logo_midnight_city
     )
+    }
 }
 
 @Composable
 @Preview
 fun GenreTagPreview() {
-    GenreTag(nombreGenero = "Synth-pop")
+    CompMovilProyectoTheme {
+        GenreTag(nombreGenero = "Synth-pop")
+    }
 }
 
 @Composable
 @Preview
 fun SongContentPreview() {
-    val example = LocalSongsProvider.songs[0]
-    SongContent(
-        cancion = example
-    )
+    CompMovilProyectoTheme {
+        val example = LocalSongsProvider.songs[0]
+        SongContent(
+            cancion = example
+        )
+    }
 }
 
 @Composable
 @Preview
 fun SongCardPreview() {
-    val example = LocalSongsProvider.songs[0]
-    SongCard(
-        cancion = example
-    )
+    CompMovilProyectoTheme {
+        val example = LocalSongsProvider.songs[0]
+        SongCard(
+            cancion = example
+        )
+    }
 }
 
 @Composable
 @Preview
 fun FiltroGenerosPreview() {
+    CompMovilProyectoTheme{
     FiltroGeneros(modifier = Modifier)
+    }
 }
-
 @Composable
 @Preview
 fun HeaderExplorerScreenPreview() {
-    HeaderExplorerScreen()
+    CompMovilProyectoTheme {
+        HeaderExplorerScreen()
+    }
 }
 
 @Composable
 @Preview
 fun BodyExplorerScreenPreview() {
-    BodyExplorerScreen()
+    CompMovilProyectoTheme {
+        BodyExplorerScreen()
+    }
 }
 
 @Composable
 @Preview
 fun IconoInferiorPreview() {
+    CompMovilProyectoTheme {
 
-    IconoInferior(
-        modifier = Modifier,
-        imagenId = R.drawable.casaicono,
-        descripcionId = R.string.icono_de_casa,
-        nombreIconoId = R.string.icono
-    )
+        IconoInferior(
+            modifier = Modifier,
+            imagenId = R.drawable.casaicono,
+            descripcionId = R.string.icono_de_casa,
+            nombreIconoId = R.string.icono
+        )
+    }
 }
 
 @Composable
 @Preview
 fun FooterExplorerScreenPreview() {
-    FooterExplorerScreen()
+    CompMovilProyectoTheme {
+        FooterExplorerScreen()
+    }
 }
 
 @Composable
 @Preview
 fun ExplorerScreenPreview() {
-    ExplorerScreen()
+    CompMovilProyectoTheme {
+        ExplorerScreen()
+    }
 }
 
 

@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.BackgroundSOY
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
@@ -115,5 +116,7 @@ fun CreateReviewScreen() {
 @Preview(showBackground = true)
 @Composable
 fun CreateReviewScreenPreview() {
-    CreateReviewScreen()
+    CompMovilProyectoTheme{
+        CreateReviewScreen()
+    }
 }
