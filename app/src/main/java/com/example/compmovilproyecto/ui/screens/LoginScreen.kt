@@ -1,6 +1,5 @@
 package com.example.compmovilproyecto.ui.screens
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -12,24 +11,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -42,12 +32,13 @@ import com.example.compmovilproyecto.ui.utils.FormularioGeneral
 import com.example.compmovilproyecto.ui.utils.LogoSOY
 import com.example.compmovilproyecto.ui.utils.TextoGeneral
 import com.example.compmovilproyecto.ui.utils.TextoSOY
-import com.example.compmovilproyecto.ui.utils.ReviewCard
 
 @Composable
-fun BodyLoginScreen(
-    modifier: Modifier = Modifier
-){
+fun BodyLoginScreen(modifier: Modifier = Modifier) {
+
+    var textoUsuario by remember { mutableStateOf("") }
+    var textoContrasena by remember { mutableStateOf("") }
+
     Column(
         modifier = modifier.padding(horizontal = 35.dp)
     ){
@@ -66,41 +57,37 @@ fun BodyLoginScreen(
 
         TextoGeneral(
             texto = stringResource(R.string.usuario),
-            estilo = TextStyle(fontSize = 15.sp,
-                fontWeight = FontWeight.Bold)
+            estilo = TextStyle(fontSize = 15.sp, fontWeight = FontWeight.Bold)
         )
 
         FormularioGeneral(
-            idLabel = (R.string.usuario),
-            idValue = (R.string.john_doe)
+            idLabel = R.string.usuario,
+            valorTexto = textoUsuario,
+            onValorCambiado = { nuevoTexto -> textoUsuario = nuevoTexto }
         )
 
         Spacer(modifier = Modifier.height(16.dp))
 
-
         TextoGeneral(
             texto = stringResource(R.string.contrasena),
-            estilo = TextStyle(fontSize = 15.sp,
-                fontWeight = FontWeight.Bold)
+            estilo = TextStyle(fontSize = 15.sp, fontWeight = FontWeight.Bold)
         )
 
         FormularioGeneral(
-            idLabel = (R.string.contrasena),
-            idValue = (R.string.contrasena3)
+            idLabel = R.string.contrasena,
+            valorTexto = textoContrasena,
+            onValorCambiado = { nuevoTexto -> textoContrasena = nuevoTexto }
         )
 
         Spacer(modifier = Modifier.height(50.dp))
 
-        BotonGeneral(texto=stringResource(R.string.crear_cuenta))
-
+        BotonGeneral(texto = stringResource(R.string.ingresar))
     }
 }
 
 @Composable
-fun LoginScreen(
-    modifier: Modifier = Modifier
-){
-    Box(modifier = modifier){
+fun LoginScreen(modifier: Modifier = Modifier) {
+    Box(modifier = modifier) {
         BackgroundPlano()
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -108,66 +95,13 @@ fun LoginScreen(
         ){
             BodyLoginScreen()
         }
-
     }
 }
 
 @Composable
 @Preview
-fun LogicScreenPreview(){
+fun LoginScreenPreview(){
     CompMovilProyectoTheme {
         LoginScreen()
     }
-}
-
-@Composable
-@Preview
-fun BodyLoginScreenPreview(){
-    CompMovilProyectoTheme{
-    BodyLoginScreen()
-        }
-}
-
-@Composable
-fun FormularioRegistroUsuario(
-    modifier: Modifier = Modifier
-    ){
-        TextField(
-            value = "",
-            onValueChange = { /*TODO*/ },
-            label = {Text(text = stringResource(R.string.usuario))},
-        )
-
-}
-
-
-@Composable
-fun FormularioRegistroContraseña(
-    modifier: Modifier = Modifier
-){
-    OutlinedTextField(
-        value = "",
-        onValueChange = { /*TODO*/ },
-        label = {Text(text = stringResource(R.string.contrasena))},
-    )
-}
-@Preview()
-@Composable
-fun FormularioRegistroContraseñaPreview(
-    modifier: Modifier = Modifier
-){
-    CompMovilProyectoTheme{
-    FormularioRegistroContraseña()
-    }
-}
-
-@Preview()
-@Composable
-fun FormularioRegistroUsuarioPreview(
-    modifier: Modifier = Modifier
-){
-    CompMovilProyectoTheme {
-        FormularioRegistroUsuario()
-    }
-
 }

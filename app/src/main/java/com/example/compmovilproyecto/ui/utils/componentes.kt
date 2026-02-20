@@ -31,6 +31,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -123,14 +125,24 @@ fun BotonGeneral(
 @Composable
 fun FormularioGeneral(
     idLabel: Int,
-    idValue: Int,
+    valorTexto: String,
+    onValorCambiado: (String) -> Unit,
     modifier: Modifier = Modifier,
-    forma: Shape = RoundedCornerShape(8.dp)
+    forma: Shape = RoundedCornerShape(8.dp),
+    esContrasena: Boolean = false
 ) {
+
+    val transformacionVisual = if (esContrasena) {
+        PasswordVisualTransformation()
+    } else {
+        VisualTransformation.None
+    }
+
     TextField(
-        value = stringResource(id = idValue),
-        onValueChange = { /*TODO*/ },
+        value = valorTexto,
+        onValueChange = onValorCambiado,
         label = { Text(text = stringResource(id = idLabel), color = Color.White) },
+        visualTransformation = transformacionVisual,
         modifier = modifier
             .fillMaxWidth()
             .height(70.dp)
@@ -151,7 +163,7 @@ fun FormularioGeneral(
             disabledContainerColor = Color.Transparent,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent ,
+            disabledIndicatorColor = Color.Transparent,
             focusedTextColor = colorResource(R.color.vclaroletra),
             unfocusedTextColor = colorResource(R.color.vclaroletra),
         )

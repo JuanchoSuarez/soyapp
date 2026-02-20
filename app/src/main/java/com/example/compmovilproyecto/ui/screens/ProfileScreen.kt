@@ -30,17 +30,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Review
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 import com.example.compmovilproyecto.ui.utils.ReviewCard
 
 @Composable
-fun HeaderProfileScreen(
-    modifier: Modifier = Modifier
-){
+fun HeaderProfileScreen(){
     Box(
-        modifier = modifier,
         contentAlignment = Alignment.Center
     ) {
         BackgroundPlanoSuperior()
@@ -145,11 +141,8 @@ fun ProfileImage(
 }
 
 @Composable
-fun ProfileScreen(
-    modifier: Modifier = Modifier
-) {
+fun ProfileScreen() {
     Scaffold(
-        modifier = modifier,
         bottomBar = {
             FooterExplorerScreen()
         }
@@ -170,29 +163,24 @@ fun ProfileScreen(
 }
 
 
+
 @Composable
 @Preview
 fun ProfileImagePreview() {
-    CompMovilProyectoTheme {
-        ProfileImage(
-            imagenId = R.drawable.pinguino,
-            descripcionId = R.string.foto_de_perfil
-        )
-    }
+    ProfileImage(
+        imagenId = R.drawable.pinguino,
+        descripcionId = R.string.foto_de_perfil
+    )
 }
 
 @Composable
 @Preview
 fun HeaderProfileScreenPreview() {
-    CompMovilProyectoTheme {
-        HeaderProfileScreen()
-    }
+    HeaderProfileScreen()
 }
 
 @Composable
 @Preview
 fun ProfileScreenPreview() {
-    CompMovilProyectoTheme {
-        ProfileScreen()
-    }
+    ProfileScreen()
 }

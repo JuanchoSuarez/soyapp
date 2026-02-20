@@ -2,16 +2,8 @@ package com.example.compmovilproyecto.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
-import androidx.compose.material3.Text
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -21,29 +13,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
-import com.example.compmovilproyecto.ui.utils.BackgroundPlano
-import com.example.compmovilproyecto.ui.utils.BackgroundSOY
-import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
-import com.example.compmovilproyecto.ui.utils.SongCard
-
 
 @Composable
 fun HeaderCreateReviewScreen(
     modifier: Modifier = Modifier
 ) {
-    Box(){
+    Box(modifier = modifier) {
         Image(
             painter = painterResource(R.drawable.backgroundplanosuperior2),
             contentDescription = stringResource(R.string.backgroung_plano_superior_tipo_2)
         )
-        
-        Column() {
+
+        Column {
             Image(
                 painter = painterResource(R.drawable.flechaizquierdaicono),
                 contentDescription = stringResource(R.string.flecha_izquierda),
-                modifier = Modifier
-                    .size(50.dp)
+                modifier = Modifier.size(50.dp)
             )
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -65,7 +50,6 @@ fun BarraBusquedaReviewScreen(
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier) {
-
         Image(
             painter = painterResource(R.drawable.backgroundsoysuperior),
             contentDescription = "background superior"
@@ -81,20 +65,24 @@ fun BarraBusquedaReviewScreen(
                 modifier = Modifier.padding(horizontal = 17.dp)
             )
             Spacer(modifier = Modifier.height(10.dp))
+
             BarraBusqueda(
                 modifier = Modifier.padding(horizontal = 16.dp),
                 valorActual = "",
                 onValueChange = {}
             )
             Spacer(modifier = Modifier.height(2.dp))
-
         }
     }
 }
 
+
 @Composable
-fun CreateReviewScreen() {
+fun CreateReviewScreen(
+    modifier: Modifier = Modifier
+) {
     Scaffold(
+        modifier = modifier,
         bottomBar = {
         }
     ) { paddingValores ->
@@ -106,8 +94,7 @@ fun CreateReviewScreen() {
             HeaderCreateReviewScreen()
             BarraBusquedaReviewScreen()
             BodyExplorerScreen(
-                modifier = Modifier
-                    .fillMaxWidth()
+                modifier = Modifier.fillMaxWidth()
             )
         }
     }
@@ -116,7 +103,5 @@ fun CreateReviewScreen() {
 @Preview(showBackground = true)
 @Composable
 fun CreateReviewScreenPreview() {
-    CompMovilProyectoTheme{
-        CreateReviewScreen()
-    }
+    CreateReviewScreen()
 }

@@ -21,7 +21,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.BotonGeneral
 import com.example.compmovilproyecto.ui.utils.LogoSOY
@@ -29,12 +28,10 @@ import com.example.compmovilproyecto.ui.utils.LogoSOY
 import com.example.compmovilproyecto.ui.utils.TextoGeneral
 
 @Composable
-fun BodyHomeScreen(
-    modifier: Modifier = Modifier
-){
+fun BodyHomeScreen(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier.padding(horizontal = 35.dp)
+        modifier = Modifier.padding(horizontal = 35.dp)
     ){
         Spacer(modifier = Modifier.height(115.dp))
 
@@ -42,7 +39,7 @@ fun BodyHomeScreen(
             texto = stringResource(R.string.soy),
             estilo = TextStyle(fontSize = 90.sp,
                 fontFamily = FontFamily.Cursive),
-            )
+        )
 
         Spacer(modifier = Modifier.height(6.dp))
 
@@ -54,7 +51,7 @@ fun BodyHomeScreen(
             texto = stringResource(R.string.live_a_life_you_will_remember),
             estilo = TextStyle(fontSize = 22.sp,
                 fontStyle = FontStyle.Italic),
-            )
+        )
 
         Spacer(modifier = Modifier.height(10.dp))
 
@@ -80,7 +77,7 @@ fun BodyHomeScreen(
 fun HomeScreen(
     modifier: Modifier = Modifier
 ){
-    Box(modifier = modifier.fillMaxSize()){
+    Box(modifier = Modifier.fillMaxSize()){
         BackgroundPlano()
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -94,7 +91,5 @@ fun HomeScreen(
 @Composable
 @Preview
 fun HomeScreenPreview(){
-    CompMovilProyectoTheme {
-        HomeScreen()
-    }
+    HomeScreen()
 }
