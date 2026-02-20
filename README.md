@@ -1,158 +1,227 @@
 # SOY ( Song Of The Year)
 
+**SOY** es una aplicación móvil desarrollada en la clase de Computación Móvil con el propósito de aplicar los conceptos y requisitos vistos en el curso mediante la creación de una red social enfocada en la música. La app permite a los usuarios registrarse, autenticarse y gestionar su cuenta, descubrir canciones, visualizar su información principal, calificarlas en una escala del 0 al 5, escribir reseñas y comentarios, interactuar con otros usuarios mediante “likes” y seguimientos, recibir notificaciones por actividades relevantes y explorar un feed personalizado con las publicaciones más recientes, además de contar con búsqueda y filtrado de canciones y un perfil donde cada usuario puede administrar su foto y ver sus calificaciones, integrando así funcionalidades de interacción, gestión de datos y diseño de interfaces móviles.
+
+## Tecnologias
+
+-Kotlin
+
+-Figma
+
+## Funcionalidades
+
+- Registro, inicio de sesión, cierre de sesión.
+
+- Eliminación definitiva de cuenta.
+
+- Visualización de información detallada de canciones (nombre, artista, género, fecha, duración, comentarios y reseñas).
+
+- Calificación de canciones en escala de 0 a 5 (una por canción, editable).
+
+- Creación, edición y eliminación de reseñas y comentarios.
+
+- Sistema de seguimiento entre usuarios.
+
+- Feed principal con publicaciones ordenadas por fecha (más recientes primero).
+
+- Interacción mediante comentarios y likes en publicaciones.
+
+- Pantalla de canciones recientes.
+
+- Búsqueda por nombre y filtrado por categoría.
+
+- Perfil de usuario con listado de canciones calificadas y edición de foto.
+
+- Notificaciones por nuevos seguidores, comentarios y “likes”.
+
+
+## Mockup ( FIGMA)
+https://lapel-mule-60435246.figma.site    
 ## 📊 Diagrama de Clases
+
+## Paleta de colores
+#110126 → color Azul intenso 
+
+#041b61 → color Azul marino
+
+#002cb1 → color Azul real
+
+#005cc1 → color Azul medio
+
+#008bf2 → color Azul claro
+
+#9e55fa → color Violeta claro
+
+#af34dd → color Púrpura
+
+#8e19b8 → color Morado
+
+#81005c → color Magenta oscuro
+
+#400116 → color Burdeos
+
+## Diagrama E/R
+
+```mermaid
+erDiagram
+
+    USUARIO ||--o{ RESENA : "es autor de"
+    USUARIO ||--o{ COMENTARIO : "escribe"
+    RESENA ||--o{ COMENTARIO : "genera"
+    RESENA }o--|| CANCION : "califica"
+    CANCION }o--|| ARTISTA : "pertenece a"
+    USUARIO ||--o{ NOTIFICACION : "recibe"
+    
+    USUARIO ||--o{ LIKES : "otorga"
+    RESENA ||--o{ LIKES : "recibe"
+    
+    USUARIO ||--o{ SEGUIDORES : "es seguido"
+    USUARIO ||--o{ SEGUIDORES : "sigue"
+
+    USUARIO {
+        varchar idUsuario PK
+        varchar nombreUsuario
+        varchar correo
+        varchar contrasena
+        varchar fotoPerfil
+    }
+
+    RESENA {
+        varchar idResena PK
+        varchar idUsuario FK
+        varchar idCancion FK
+        varchar contenido
+        date fechaPublicacion
+        int calificacion
+    }
+
+    COMENTARIO {
+        varchar idComentario PK
+        varchar idUsuario FK
+        varchar idResena FK
+        varchar contenido
+        date fechaComentario
+    }
+
+    CANCION {
+        varchar idCancion PK
+        varchar idArtista FK
+        varchar nombreCancion
+        varchar subgenero
+        date fechaPublicacion
+        varchar duracion
+    }
+
+    ARTISTA {
+        varchar idArtista PK
+        varchar nombreArtista
+    }
+
+    NOTIFICACION {
+        varchar idNotificacion PK
+        varchar idUsuario FK
+        varchar tipo
+        varchar mensaje
+        date fechaNotificacion
+        boolean estaLeida
+    }
+
+    LIKES {
+        varchar idUsuario FK
+        varchar idResena FK
+    }
+
+    SEGUIDORES {
+        varchar idSeguidor FK
+        varchar idSeguido FK
+    }
+```
+
+
+
+## 🗄️ Diagrama de clases
 
 ```mermaid
 classDiagram
+direction LR
 
 class Usuario {
-    -String idUsuario
-    -String nombreUsuario
-    -String correo
-    -String contrasena
-    -String fotoPerfil
-    -List<Usuario> listaSeguidores
-    -List<Usuario> listaSeguidos
+    -idUsuario : String
+    -nombreUsuario : String
+    -correo : String
+    -contrasena : String
+    -fotoPerfil : String
+    -listaSeguidores : List<Usuario>
+    -listaSeguidos : List<Usuario>
     +registrar()
     +iniciarSesion()
     +cerrarSesion()
     +editarPerfil()
     +eliminarCuenta()
-    +seguirUsuario(usuario: Usuario)
-    +dejarSeguir(usuario: Usuario)
+    +seguirUsuario(usuario : Usuario)
+    +dejarSeguir(usuario : Usuario)
 }
 
 class Resena {
-    -String idResena
-    -String contenido
-    -Date fechaPublicacion
-    -int calificacion
+    -idResena : String
+    -contenido : String
+    -fechaPublicacion : date
+    -calificacion : int
+    -autor : Usuario
+    -cancionAsociada : Cancion
     +crearResena()
     +editarResena()
     +eliminarResena()
 }
 
 class Comentario {
-    -String idComentario
-    -String contenido
-    -Date fechaComentario
+    -idComentario : String
+    -contenido : String
+    -fechaComentario : date
+    -autor : Usuario
     +crearComentario()
     +editarComentario()
     +eliminarComentario()
 }
 
 class Cancion {
-    -String idCancion
-    -String nombreCancion
-    -String subgenero
-    -Date fechaPublicacion
-    -String duracion
+    -idCancion : String
+    -nombreCancion : String
+    -subgenero : String
+    -fechaPublicacion : date
+    -duracion : String
     +mostrarInfo()
 }
 
 class Artista {
-    -String idArtista
-    -String nombreArtista
-    +obtenerCanciones()
+    -idArtista : String
+    -nombreArtista : String
+    +obtenerCanciones() : List<Cancion>
 }
 
 class Notificacion {
-    -String idNotificacion
-    -String tipo
-    -String mensaje
-    -Date fechaNotificacion
-    -boolean estaLeida
+    -idNotificacion : String
+    -tipo : enum
+    -mensaje : String
+    -fechaNotificacion : date
+    -usuarioDestino : Usuario
+    -estaLeida : boolean
     +enviarNotificacion()
     +marcarLeida()
 }
 
 Usuario "1" --> "*" Resena : realiza
+Usuario "1" --> "*" Comentario : escribe
 Resena "1" *-- "*" Comentario : contiene
-Usuario "1" --> "*" Usuario : sigue
+Resena "*" --> "1" Cancion : es calificada
+Cancion "*" --> "1" Artista : compone
 Usuario "1" --> "*" Notificacion : recibe
-Resena "*" --> "1" Cancion : califica
-Cancion "*" --> "1" Artista : pertenece
-
-
-
+Usuario "1" --> "*" Usuario : es seguido por
 ```
-###  Relaciones principales
 
-- Un Usuario puede realizar múltiples Reseñas.
-- Una Reseña puede contener múltiples Comentarios.
-- Una Reseña califica una Canción.
-- Una Canción pertenece a un Artista.
-- Un Usuario puede seguir a otros Usuarios.
-- Un Usuario puede recibir múltiples Notificaciones.
+### Integrantes
 
-## 🗄️ Diagrama Entidad - Relación
-
-```mermaid
-erDiagram
-
-USUARIO {
-    string idUsuario PK
-    string nombreUsuario
-    string correo
-    string contrasena
-    string fotoPerfil
-}
-
-RESENA {
-    string idResena PK
-    string contenido
-    date fechaPublicacion
-    int calificacion
-    string idUsuario FK
-    string idCancion FK
-}
-
-COMENTARIO {
-    string idComentario PK
-    string contenido
-    date fechaComentario
-    string idUsuario FK
-    string idResena FK
-}
-
-CANCION {
-    string idCancion PK
-    string nombreCancion
-    string subgenero
-    date fechaPublicacion
-    string duracion
-    string idArtista FK
-}
-
-ARTISTA {
-    string idArtista PK
-    string nombreArtista
-}
-
-NOTIFICACION {
-    string idNotificacion PK
-    string tipo
-    string mensaje
-    date fechaNotificacion
-    boolean estaLeida
-    string idUsuario FK
-}
-
-USUARIO ||--o{ RESENA : escribe
-RESENA ||--o{ COMENTARIO : genera
-CANCION ||--o{ RESENA : recibe
-ARTISTA ||--o{ CANCION : produce
-USUARIO ||--o{ NOTIFICACION : recibe
-```
-### 📌 Diferencia entre el Modelo ER y el Diagrama de Clases
-
-El diagrama Entidad–Relación representa la estructura lógica de la base de datos,
-incluyendo claves primarias y foráneas necesarias para la persistencia de los datos.
-
-Por otro lado, el diagrama de clases modela la lógica del sistema desde un enfoque
-orientado a objetos, representando las entidades del dominio como clases con sus
-atributos y métodos, así como sus relaciones.
-
-El modelo ER sirve como base para la implementación del esquema relacional,
-mientras que el diagrama de clases es utilizado para el desarrollo del backend
-y el mapeo objeto-relacional mediante JPA en Spring Boot.
+Jose Medina - 
+Eliana Pardo - 
+Juan Suarez - 
+Laura Lara
