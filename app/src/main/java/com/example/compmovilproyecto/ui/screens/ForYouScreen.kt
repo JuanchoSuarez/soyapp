@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Review
 import com.example.compmovilproyecto.ui.data.local.LocalReviewProvider
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.BotonGeneral
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
@@ -149,5 +150,10 @@ fun ForYouScreen() {
 @Preview(showBackground = true)
 @Composable
 fun ForYouScreenPreview() {
-    ForYouScreen()
+    /*
+    CompMovilProyectoTheme {
+        ForYouScreen()
+    }
+    */
+     ForYouScreen()
 }

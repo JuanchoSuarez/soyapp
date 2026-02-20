@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Song
 import com.example.compmovilproyecto.ui.data.local.LocalSongsProvider
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
 import com.example.compmovilproyecto.ui.utils.BackgroundSOY
 import com.example.compmovilproyecto.ui.utils.BotonGeneral
@@ -473,7 +474,9 @@ fun FooterExplorerScreenPreview() {
 @Composable
 @Preview
 fun ExplorerScreenPreview() {
-    ExplorerScreen()
+    CompMovilProyectoTheme {
+        ExplorerScreen()
+    }
 }
 
 

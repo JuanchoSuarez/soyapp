@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 
 @Composable
 fun HeaderCreateReviewScreen(
@@ -103,5 +104,9 @@ fun CreateReviewScreen(
 @Preview(showBackground = true)
 @Composable
 fun CreateReviewScreenPreview() {
+    /*
+    CompMovilProyectoTheme {
+        CreateReviewScreen()
+    }*/
     CreateReviewScreen()
 }
