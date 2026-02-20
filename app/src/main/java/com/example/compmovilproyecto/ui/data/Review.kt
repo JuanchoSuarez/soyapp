@@ -2,7 +2,7 @@ package com.example.compmovilproyecto.ui.data
 
 import androidx.annotation.DrawableRes
 
-data class Review(
+data class  Review(
     @DrawableRes val imageId: Int,
     val user: String,
     val fecha: String,
