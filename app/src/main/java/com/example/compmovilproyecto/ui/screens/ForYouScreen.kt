@@ -24,21 +24,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.data.Review
 import com.example.compmovilproyecto.ui.data.local.LocalReviewProvider
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.BotonGeneral
-import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 import com.example.compmovilproyecto.ui.utils.LogoSOY
 import com.example.compmovilproyecto.ui.utils.ReviewCard
-import com.example.compmovilproyecto.ui.utils.TextoGeneral
 import com.example.compmovilproyecto.ui.utils.TextoSOY
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -176,15 +171,9 @@ fun BodyForYouScreen(
 
 @Composable
 fun ForYouScreen() {
-    Scaffold(
-        bottomBar = {
-            FooterExplorerScreen()
-        }
-    ) { paddingValores ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(paddingValores)
         ) {
             HeaderForYouScreen()
             BodyForYouScreen(
@@ -194,7 +183,7 @@ fun ForYouScreen() {
             )
         }
     }
-}
+
 
 @Preview(showBackground = true)
 @Composable

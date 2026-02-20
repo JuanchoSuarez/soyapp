@@ -21,7 +21,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,8 +36,8 @@ import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Notification
 import com.example.compmovilproyecto.ui.data.local.LocalNotificationProvider
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
-import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 
 @Composable
 fun HeaderNotificationScreen(
@@ -170,30 +169,23 @@ fun NotificationCard(
 fun NotificationScreen() {
     val listaBasica = LocalNotificationProvider.notificaciones
 
-    Scaffold(
-        bottomBar = {
-            FooterExplorerScreen()
-        }
-    ) { paddingValores ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValores)
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        BackgroundPlano()
+        Column(
+            modifier = Modifier.fillMaxSize()
         ) {
-            BackgroundPlano()
-            Column(
-                modifier = Modifier.fillMaxSize()
-            ) {
-                HeaderNotificationScreen()
+            HeaderNotificationScreen()
 
-                LazyColumn(
-                    modifier = Modifier.weight(1f),
-                    contentPadding = PaddingValues(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    items(listaBasica) { item ->
-                        NotificationCard(datos = item)
-                    }
+            LazyColumn(
+                modifier = Modifier.weight(1f),
+                contentPadding = PaddingValues(16.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                items(listaBasica) { item ->
+                    NotificationCard(datos = item)
                 }
             }
         }
@@ -203,5 +195,7 @@ fun NotificationScreen() {
 @Preview(showBackground = true)
 @Composable
 fun NotificationScreenPreview() {
-    NotificationScreen()
+    CompMovilProyectoTheme {
+        NotificationScreen()
+    }
 }

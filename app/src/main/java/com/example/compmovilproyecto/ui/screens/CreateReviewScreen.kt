@@ -104,9 +104,8 @@ fun CreateReviewScreen(
 @Preview(showBackground = true)
 @Composable
 fun CreateReviewScreenPreview() {
-    /*
-    CompMovilProyectoTheme {
+
         CreateReviewScreen()
-    }*/
-    CreateReviewScreen()
+
+
 }
