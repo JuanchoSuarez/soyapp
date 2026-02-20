@@ -35,6 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.BotonGeneral
 import com.example.compmovilproyecto.ui.utils.FormularioGeneral
@@ -110,13 +111,17 @@ fun LoginScreen(){
 @Composable
 @Preview
 fun LogicScreenPreview(){
-    LoginScreen()
+    CompMovilProyectoTheme {
+        LoginScreen()
+    }
 }
 
 @Composable
 @Preview
 fun BodyLoginScreenPreview(){
+    CompMovilProyectoTheme{
     BodyLoginScreen()
+        }
 }
 
 @Composable
@@ -147,7 +152,9 @@ fun FormularioRegistroContraseña(
 fun FormularioRegistroContraseñaPreview(
     modifier: Modifier = Modifier
 ){
+    CompMovilProyectoTheme{
     FormularioRegistroContraseña()
+    }
 }
 
 @Preview()
@@ -155,6 +162,8 @@ fun FormularioRegistroContraseñaPreview(
 fun FormularioRegistroUsuarioPreview(
     modifier: Modifier = Modifier
 ){
-    FormularioRegistroUsuario()
+    CompMovilProyectoTheme {
+        FormularioRegistroUsuario()
+    }
 
 }

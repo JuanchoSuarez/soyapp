@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Notification
 import com.example.compmovilproyecto.ui.data.local.LocalNotificationProvider
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlano
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 
@@ -203,5 +204,7 @@ fun NotificationScreen() {
 @Preview(showBackground = true)
 @Composable
 fun NotificationScreenPreview() {
-    NotificationScreen()
+    CompMovilProyectoTheme {
+        NotificationScreen()
+    }
 }

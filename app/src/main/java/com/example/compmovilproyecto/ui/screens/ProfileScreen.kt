@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Review
+import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
 import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
 import com.example.compmovilproyecto.ui.utils.FooterExplorerScreen
 import com.example.compmovilproyecto.ui.utils.ReviewCard
@@ -144,7 +145,8 @@ fun ProfileImage(
 fun ProfileScreen() {
     Scaffold(
         bottomBar = {
-            FooterExplorerScreen()
+            FooterExplorerScreen(
+            )
         }
     ) { paddingValores ->
         Column(
@@ -167,20 +169,26 @@ fun ProfileScreen() {
 @Composable
 @Preview
 fun ProfileImagePreview() {
-    ProfileImage(
-        imagenId = R.drawable.pinguino,
-        descripcionId = R.string.foto_de_perfil
-    )
+    CompMovilProyectoTheme {
+        ProfileImage(
+            imagenId = R.drawable.pinguino,
+            descripcionId = R.string.foto_de_perfil
+        )
+    }
 }
 
 @Composable
 @Preview
 fun HeaderProfileScreenPreview() {
-    HeaderProfileScreen()
+    CompMovilProyectoTheme {
+        HeaderProfileScreen()
+    }
 }
 
 @Composable
 @Preview
 fun ProfileScreenPreview() {
-    ProfileScreen()
+    CompMovilProyectoTheme {
+        ProfileScreen()
+    }
 }
