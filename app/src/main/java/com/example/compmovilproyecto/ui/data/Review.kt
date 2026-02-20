@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto.ui.model
+package com.example.compmovilproyecto.ui.data
 
 data class Review(
     val user: String,

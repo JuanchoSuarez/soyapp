@@ -3,11 +3,16 @@ package com.example.compmovilproyecto.ui.utils
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -15,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -25,11 +31,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.compmovilproyecto.R
+import com.example.compmovilproyecto.ui.screens.IconoInferior
 
 // AQUI SE ENCUENTRAN TODOS LOS COMPONENTES QUE SE USARAN EN LA APP
 // COMO BOTONES, IMAGENES, TEXTOS, ETC.
@@ -88,22 +94,27 @@ fun LogoSOY(
 //--------------------------------------------------------------------------------------------------
 @Composable
 fun BotonGeneral(
-    modifier: Modifier = Modifier.fillMaxWidth(0.8f)
-    .height(70.dp)
-    .padding(vertical = 8.dp),
+    modifier: Modifier = Modifier
+        .fillMaxWidth(0.8f)
+        .height(70.dp)
+        .padding(vertical = 8.dp),
     texto: String,
+    fontSize: TextUnit = 20.sp,
     color: Int = R.color.violetaClaro,
     forma: Shape = RoundedCornerShape(8.dp)
 ) {
-    Button(onClick = { /*TODO*/ },
+    Button(
+        onClick = { /*TODO*/ },
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
             containerColor = colorResource(color),
         ),
         shape = forma
     ) {
-        Text(text = texto,
-            fontSize = 20.sp)
+        Text(
+            text = texto,
+            fontSize = fontSize
+        )
     }
 }
 
@@ -118,7 +129,7 @@ fun FormularioGeneral(
         .padding(vertical = 8.dp)
         .border(
             width = 3.dp,
-            color = colorResource(R.color.violetaApagado),
+            color = colorResource(R.color.violetaClaro),
             shape = RoundedCornerShape(8.dp)
         )
         .background(
@@ -132,18 +143,20 @@ fun FormularioGeneral(
     TextField(
         value = stringResource(id = idValue),
         onValueChange = { /*TODO: Lo dejamos así por ahora*/ },
-        label = { Text(text = stringResource(id = idLabel),
-            color = colorResource(R.color.violetaClaro)) },
+        label = { Text(text = stringResource(id = idLabel)) },
         modifier = modifier,
         shape = forma,
         colors = TextFieldDefaults.colors(
             focusedContainerColor = Color.Transparent,
             unfocusedContainerColor = Color.Transparent,
             disabledContainerColor = Color.Transparent,
-            unfocusedTextColor = Color.Black,
+            focusedIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent,
+            disabledIndicatorColor = Color.Transparent
         )
     )
 }
+
 
 //--------------------------------------------------------------------------------------------------
 // BACKGROUND PLANO -> (LoginScreen, RegisterScreen)
@@ -157,6 +170,21 @@ fun BackgroundPlano(
         contentDescription = stringResource(R.string.fondo_pantalla_principal),
         modifier = modifier.fillMaxSize(),
         contentScale = ContentScale.Crop
+    )
+}
+
+//--------------------------------------------------------------------------------------------------
+// BACKGROUND PLANO SUPERIOR -> (ExplorerScreen, ¿¿??)
+//--------------------------------------------------------------------------------------------------
+@Composable
+fun BackgroundPlanoSuperior(
+    modifier: Modifier = Modifier,
+) {
+    Image(
+        painter = painterResource(R.drawable.backgroundplanosuperior),
+        contentDescription = stringResource(R.string.fondo_plano_superior),
+        modifier = modifier.fillMaxWidth(),
+        contentScale = ContentScale.FillWidth
     )
 }
 
@@ -213,10 +241,10 @@ fun TextoFecha(
 @Composable
 fun TextoCancion(
     modifier: Modifier = Modifier,
-    cancion: String
+    nombreCancion: String
 ) {
     Text(
-        text = cancion,
+        text = nombreCancion,
         color = Color.White,
         fontWeight = FontWeight.Bold,
         fontSize = 16.sp,
@@ -230,17 +258,17 @@ fun TextoCancion(
 @Composable
 fun TextoArtista(
     modifier: Modifier = Modifier,
-    artista: String
+    nombreArtista: String
 ) {
     Text(
-        text = artista,
+        text = nombreArtista,
         color = colorResource(R.color.violetaClaro),
         modifier = modifier
     )
 }
 
 //--------------------------------------------------------------------------------------------------
-// TEXTO CALIFICACIÓN -> (Contenedor: CardReseñas, ¿¿??)
+// EXTO CALIFICACIÓN -> (Contenedor: CardReseñas, ¿¿??)
 //--------------------------------------------------------------------------------------------------
 @Composable
 fun TextoRating(
@@ -269,5 +297,3 @@ fun TextoResena(
         modifier = modifier
     )
 }
-
-
