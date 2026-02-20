@@ -151,7 +151,9 @@ fun FormularioGeneral(
             disabledContainerColor = Color.Transparent,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent
+            disabledIndicatorColor = Color.Transparent ,
+            focusedTextColor = colorResource(R.color.vclaroletra),
+            unfocusedTextColor = colorResource(R.color.vclaroletra),
         )
     )
 }

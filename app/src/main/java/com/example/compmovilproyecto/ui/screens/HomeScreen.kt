@@ -30,7 +30,8 @@ import com.example.compmovilproyecto.ui.utils.TextoGeneral
 @Composable
 fun BodyHomeScreen(){
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(horizontal = 35.dp)
     ){
         Spacer(modifier = Modifier.height(115.dp))
 

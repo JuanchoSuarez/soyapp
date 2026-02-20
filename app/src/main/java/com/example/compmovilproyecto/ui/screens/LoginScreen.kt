@@ -46,7 +46,7 @@ import com.example.compmovilproyecto.ui.utils.ReviewCard
 @Composable
 fun BodyLoginScreen(){
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        modifier = Modifier.padding(horizontal = 35.dp)
     ){
         Spacer(modifier = Modifier.height(140.dp))
         Row(
@@ -82,8 +82,8 @@ fun BodyLoginScreen(){
         )
 
         FormularioGeneral(
-            idLabel = (R.string.usuario),
-            idValue = (R.string.john_doe)
+            idLabel = (R.string.contrasena),
+            idValue = (R.string.contrasena3)
         )
 
         Spacer(modifier = Modifier.height(50.dp))
