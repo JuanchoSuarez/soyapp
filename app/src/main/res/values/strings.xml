@@ -38,5 +38,7 @@
     <string name="crear_resena">Crear Reseña</string>
     <string name="buscar_cancion">Buscar canción</string>
     <string name="buscar_cancion_o_artista">Buscar canción o artista...</string>
+    <string name="marcar_todas_como_le_das" />
+    <string name="notificaciones" />
 
 </resources>
