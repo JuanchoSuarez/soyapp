@@ -33,6 +33,7 @@ fun ReviewsList(
 
     val reviews = listOf(
         Review(
+            
             stringResource(R.string.musiclover),
             "2023-08-01",
             stringResource(R.string.midnight_city),
@@ -76,7 +77,9 @@ fun ReviewsList(
 
 
 @Composable
-fun BodyForYouScreen() {
+fun BodyForYouScreen(
+    modifier: Modifier = Modifier
+) {
 
     Column {
         TopSelectorButtons()
@@ -86,7 +89,9 @@ fun BodyForYouScreen() {
 
 
 @Composable
-fun ForYouScreen() {
+fun ForYouScreen(
+    modifier: Modifier = Modifier
+) {
 
     Box {
         BackgroundPlano()
