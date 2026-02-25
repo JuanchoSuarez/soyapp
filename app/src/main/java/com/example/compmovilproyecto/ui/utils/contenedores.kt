@@ -59,7 +59,6 @@ fun ReviewCard(
             verticalAlignment = Alignment.Top
         ) {
 
-            // IZQUIERDA
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
