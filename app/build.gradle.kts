@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.compmovilproyecto"
+    namespace = "com.example.soyapp"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.compmovilproyecto"
+        applicationId = "com.example.soyapp"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

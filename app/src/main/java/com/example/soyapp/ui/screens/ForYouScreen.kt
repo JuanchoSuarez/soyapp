@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto.ui.screens
+package com.example.soyapp.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -14,9 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -27,15 +25,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.data.local.LocalReviewProvider
-import com.example.compmovilproyecto.ui.utils.BackgroundPlano
-import com.example.compmovilproyecto.ui.utils.BotonGeneral
-import com.example.compmovilproyecto.ui.utils.LogoSOY
-import com.example.compmovilproyecto.ui.utils.ReviewCard
-import com.example.compmovilproyecto.ui.utils.TextoSOY
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.layout.fillMaxWidth
+import com.example.soyapp.R
+import com.example.soyapp.ui.data.local.LocalReviewProvider
+import com.example.soyapp.ui.utils.BackgroundPlano
+import com.example.soyapp.ui.utils.BotonGeneral
+import com.example.soyapp.ui.utils.LogoSOY
+import com.example.soyapp.ui.utils.ReviewCard
+import com.example.soyapp.ui.utils.TextoSOY
 
 @Composable
 fun HeaderForYouScreen(
@@ -188,7 +184,7 @@ fun ForYouScreen() {
 @Composable
 fun ForYouScreenPreview() {
     /*
-    CompMovilProyectoTheme {
+     SoyAppTheme {
         ForYouScreen()
     }
     */

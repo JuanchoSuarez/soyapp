@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto.ui.screens
+package com.example.soyapp.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -33,11 +33,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.data.Notification
-import com.example.compmovilproyecto.ui.data.local.LocalNotificationProvider
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
-import com.example.compmovilproyecto.ui.utils.BackgroundPlano
+import com.example.soyapp.R
+import com.example.soyapp.ui.data.Notification
+import com.example.soyapp.ui.data.local.LocalNotificationProvider
+import com.example.soyapp.ui.theme.SoyAppTheme
+import com.example.soyapp.ui.utils.BackgroundPlano
 
 @Composable
 fun HeaderNotificationScreen(
@@ -195,7 +195,7 @@ fun NotificationScreen() {
 @Preview(showBackground = true)
 @Composable
 fun NotificationScreenPreview() {
-    CompMovilProyectoTheme {
+    SoyAppTheme() {
         NotificationScreen()
     }
 }

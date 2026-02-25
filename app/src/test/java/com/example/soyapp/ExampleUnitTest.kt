@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto
+package com.example.soyapp
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto.ui.screens
+package com.example.soyapp.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -24,8 +24,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
+import com.example.soyapp.R
+import com.example.soyapp.ui.utils.BackgroundPlanoSuperior
 
 @Composable
 fun HeaderProfileScreen(){

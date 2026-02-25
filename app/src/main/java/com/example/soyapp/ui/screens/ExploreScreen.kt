@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto.ui.screens
+package com.example.soyapp.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -37,14 +37,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.data.Song
-import com.example.compmovilproyecto.ui.data.local.LocalSongsProvider
-import com.example.compmovilproyecto.ui.utils.BackgroundPlanoSuperior
-import com.example.compmovilproyecto.ui.utils.BackgroundSOY
-import com.example.compmovilproyecto.ui.utils.BotonGeneral
-import com.example.compmovilproyecto.ui.utils.TextoArtista
-import com.example.compmovilproyecto.ui.utils.TextoCancion
+import com.example.soyapp.R
+import com.example.soyapp.ui.data.Song
+import com.example.soyapp.ui.data.local.LocalSongsProvider
+import com.example.soyapp.ui.utils.BackgroundPlanoSuperior
+import com.example.soyapp.ui.utils.BackgroundSOY
+import com.example.soyapp.ui.utils.BotonGeneral
+import com.example.soyapp.ui.utils.TextoArtista
+import com.example.soyapp.ui.utils.TextoCancion
 
 @Composable
 fun FiltroGeneros(

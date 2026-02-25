@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CompMovilProyecto"
+rootProject.name = "soyapp"
 include(":app")
  

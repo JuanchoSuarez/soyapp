@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto.ui.data
+package com.example.soyapp.ui.data
 
 import androidx.annotation.DrawableRes
 

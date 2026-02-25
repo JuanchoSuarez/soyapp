@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto
+package com.example.soyapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -22,17 +22,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.compmovilproyecto.ui.screens.CreateReviewScreen
-import com.example.compmovilproyecto.ui.screens.ExplorerScreen
-import com.example.compmovilproyecto.ui.screens.ForYouScreen
-import com.example.compmovilproyecto.ui.screens.HomeScreen
-import com.example.compmovilproyecto.ui.screens.IconoInferior
-import com.example.compmovilproyecto.ui.screens.LoginScreen
-import com.example.compmovilproyecto.ui.screens.NotificationScreen
-import com.example.compmovilproyecto.ui.screens.ProfileImage
-import com.example.compmovilproyecto.ui.screens.ProfileScreen
-import com.example.compmovilproyecto.ui.screens.RegisterScreen
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
+import com.example.soyapp.ui.screens.ExplorerScreen
+import com.example.soyapp.ui.screens.IconoInferior
 
 
 class MainActivity : ComponentActivity() {

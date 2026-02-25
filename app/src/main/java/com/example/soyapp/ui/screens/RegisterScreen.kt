@@ -1,4 +1,4 @@
-package com.example.compmovilproyecto.ui.screens
+package com.example.soyapp.ui.screens
 
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
@@ -25,14 +25,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.theme.CompMovilProyectoTheme
-import com.example.compmovilproyecto.ui.utils.BackgroundPlano
-import com.example.compmovilproyecto.ui.utils.BotonGeneral
-import com.example.compmovilproyecto.ui.utils.FormularioGeneral
-import com.example.compmovilproyecto.ui.utils.LogoSOY
-import com.example.compmovilproyecto.ui.utils.TextoGeneral
-import com.example.compmovilproyecto.ui.utils.TextoSOY
+import com.example.soyapp.R
+import com.example.soyapp.ui.theme.SoyAppTheme
+import com.example.soyapp.ui.utils.BackgroundPlano
+import com.example.soyapp.ui.utils.BotonGeneral
+import com.example.soyapp.ui.utils.FormularioGeneral
+import com.example.soyapp.ui.utils.LogoSOY
+import com.example.soyapp.ui.utils.TextoGeneral
+import com.example.soyapp.ui.utils.TextoSOY
 
 @Composable
 fun BodyRegisterScreen(modifier: Modifier = Modifier) {
@@ -141,7 +141,7 @@ fun RegisterScreen(modifier: Modifier = Modifier) {
 @Composable
 @Preview
 fun RegisterScreenPreview(){
-    CompMovilProyectoTheme {
+    SoyAppTheme {
         RegisterScreen()
     }
 }

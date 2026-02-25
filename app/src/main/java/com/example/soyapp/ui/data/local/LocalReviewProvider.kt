@@ -1,7 +1,7 @@
-package com.example.compmovilproyecto.ui.data.local
+package com.example.soyapp.ui.data.local
 
-import com.example.compmovilproyecto.R
-import com.example.compmovilproyecto.ui.data.Review
+import com.example.soyapp.R
+import com.example.soyapp.ui.data.Review
 
 object LocalReviewProvider {
     val reviews = listOf(
