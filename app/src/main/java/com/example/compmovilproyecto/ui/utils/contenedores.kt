@@ -52,26 +52,60 @@ fun ReviewCard(
         modifier = modifier.fillMaxWidth()
     ) {
         Row(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.Top
         ) {
 
-            Image(
-                painter = painterResource(review.imageId),
-                contentDescription = null,
-                modifier = Modifier.size(40.dp)
-                    .clip(CircleShape)
-            )
+            // IZQUIERDA
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Image(
+                    painter = painterResource(review.imageId),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(40.dp)
+                        .clip(CircleShape)
+                )
 
-            Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.width(12.dp))
 
-            Column {
-                TextoUsuario(usuario = review.user)
-                TextoFecha(fecha = review.fecha)
+                Column {
+                    TextoUsuario(usuario = review.user)
+                    TextoFecha(fecha = review.fecha)
+                }
+            }
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+
+                Image(
+                    painter = painterResource(review.editId),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(25.dp)
+                        .clip(CircleShape)
+
+                )
+
+                Spacer(modifier = Modifier.width(14.dp))
+
+                Image(
+                    painter = painterResource(review.deleteId),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(30.dp)
+                        .clip(CircleShape)
+
+                )
             }
         }
-
-        Column (
-            modifier = Modifier.padding(horizontal = 14.dp)
+        Column(
+            modifier = Modifier
         ) {
             TextoCancion(nombreCancion = review.song)
             TextoArtista(nombreArtista = review.artist)
@@ -81,6 +115,32 @@ fun ReviewCard(
             TextoResena(review = review.review)
             Spacer(modifier = Modifier.height(15.dp))
         }
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ){
+                Image(
+                    painter = painterResource(review.likesId),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(30.dp)
+                        .clip(CircleShape)
+
+                )
+
+                Image(
+                    painter = painterResource(review.comments),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(25.dp)
+                        .clip(CircleShape)
+                )
+                    Text(
+                        text = "Comentar",
+                        color = Color.White,
+                        fontSize = 12.sp,)
+        }
+
     }
 }
 

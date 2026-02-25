@@ -34,8 +34,6 @@ import com.example.compmovilproyecto.ui.utils.BotonGeneral
 import com.example.compmovilproyecto.ui.utils.LogoSOY
 import com.example.compmovilproyecto.ui.utils.ReviewCard
 import com.example.compmovilproyecto.ui.utils.TextoSOY
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.layout.fillMaxWidth
 
 @Composable
 fun HeaderForYouScreen(
@@ -124,28 +122,6 @@ fun ReviewsList(
                                 .padding(horizontal = 6.dp),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
-
-
-                            // Likes y comentarios dinámicos según posición
-                            Image(
-                                painter = painterResource(
-                                    when (index) {
-                                        0 -> R.drawable.primerimagenlikesycomentarios
-                                        1 -> R.drawable.segundobotonlikesycomentarios
-                                        2 -> R.drawable.tercerbotondelikesycomentarios
-                                        else -> R.drawable.primerimagenlikesycomentarios
-                                    }
-                                ),
-                                contentDescription = "Likes y comentarios",
-                                modifier = Modifier.height(34.dp)
-                            )
-
-                            // Editar / borrar
-                            Image(
-                                painter = painterResource(R.drawable.editaryborrarbotones),
-                                contentDescription = "Editar y borrar",
-                                modifier = Modifier.height(34.dp)
-                            )
                         }
 
                         Spacer(modifier = Modifier.height(17.dp))
