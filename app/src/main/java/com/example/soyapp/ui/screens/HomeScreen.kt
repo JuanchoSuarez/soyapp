@@ -54,7 +54,7 @@ fun BodyHomeScreen(){
 
         TextoGeneral(
             texto = stringResource(R.string.avicii_the_nights),
-            estilo = TextStyle(fontSize = 18.sp,),
+            estilo = TextStyle(fontSize = 18.sp),
             color = colorResource(R.color.violetaClaro),
         )
 
