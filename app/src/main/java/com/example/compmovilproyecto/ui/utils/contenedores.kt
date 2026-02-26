@@ -1,6 +1,8 @@
 package com.example.compmovilproyecto.ui.utils
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,6 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.glance.preview.Preview
 import com.example.compmovilproyecto.R
 import com.example.compmovilproyecto.ui.data.Review
 import com.example.compmovilproyecto.ui.data.Song
@@ -166,6 +169,62 @@ fun SongCard(cancion: Song) {
                 text = cancion.artista,
                 color = Color.Gray,
                 fontSize = 13.sp
+            )
+        }
+    }
+}
+
+@Composable
+fun SettingsActionCard(
+    title: String,
+    subtitle: String,
+    iconRes: Int,
+    backgroundColor: Color,
+    iconBoxColor: Color,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val shape = RoundedCornerShape(22.dp)
+
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .clip(shape)
+            .background(backgroundColor.copy(alpha = 0.80f))
+            .clickable { onClick() }
+            .padding(18.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        // Caja del icono
+        Box(
+            modifier = Modifier
+                .size(54.dp)
+                .clip(RoundedCornerShape(16.dp))
+                .background(iconBoxColor.copy(alpha = 0.75f)),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = painterResource(iconRes),
+                contentDescription = null,
+                modifier = Modifier.size(28.dp),
+                contentScale = ContentScale.Fit
+            )
+        }
+
+        Spacer(Modifier.width(16.dp))
+
+        Column {
+            androidx.compose.material3.Text(
+                text = title,
+                color = Color.White,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+            Spacer(Modifier.height(2.dp))
+            androidx.compose.material3.Text(
+                text = subtitle,
+                color = Color.White.copy(alpha = 0.75f),
+                fontSize = 14.sp
             )
         }
     }
